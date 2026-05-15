@@ -1,0 +1,643 @@
+{
+	"folders": [
+		{
+			"name": "GameDevTVJam",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "C:\\Program Files\\Epic Games\\UE_5.6"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"terminal.integrated.env.windows": {
+			"PATH": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64;${env:PATH}",
+			"DOTNET_ROOT": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64",
+			"DOTNET_HOST_PATH": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64\\dotnet.exe",
+			"DOTNET_MULTILEVEL_LOOKUP": "0",
+			"DOTNET_ROLL_FORWARD": "LatestMajor"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "GameDevTVJam Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Debug",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Debug",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GameDevTVJam Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Debug",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"DebugGame",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"DebugGame",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GameDevTVJam Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"DebugGame",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Development",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Development",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GameDevTVJam Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Development",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Test",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Test",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GameDevTVJam Win64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Test",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Shipping",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Shipping",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GameDevTVJam Win64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJam Win64 Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GameDevTVJam",
+					"Win64",
+					"Shipping",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJamEditor Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJamEditor",
+					"Win64",
+					"Debug",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJamEditor Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJamEditor",
+					"Win64",
+					"Debug",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GameDevTVJamEditor Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJamEditor Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GameDevTVJamEditor",
+					"Win64",
+					"Debug",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJamEditor Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJamEditor",
+					"Win64",
+					"DebugGame",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJamEditor Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJamEditor",
+					"Win64",
+					"DebugGame",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GameDevTVJamEditor Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJamEditor Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GameDevTVJamEditor",
+					"Win64",
+					"DebugGame",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJamEditor Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJamEditor",
+					"Win64",
+					"Development",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJamEditor Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GameDevTVJamEditor",
+					"Win64",
+					"Development",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GameDevTVJamEditor Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"label": "GameDevTVJamEditor Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GameDevTVJamEditor",
+					"Win64",
+					"Development",
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch GameDevTVJam (Debug)",
+				"request": "launch",
+				"program": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"preLaunchTask": "GameDevTVJam Win64 Debug Build",
+				"args": [
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.6",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.6",
+					"Z:\\UEVFS\\GameDevTVJam": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam",
+					"Z:\\UEVFS\\Root": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"name": "Launch GameDevTVJam (DebugGame)",
+				"request": "launch",
+				"program": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"preLaunchTask": "GameDevTVJam Win64 DebugGame Build",
+				"args": [
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.6",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.6",
+					"Z:\\UEVFS\\GameDevTVJam": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam",
+					"Z:\\UEVFS\\Root": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"name": "Launch GameDevTVJam (Development)",
+				"request": "launch",
+				"program": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\Binaries\\Win64\\UnrealGame.exe",
+				"preLaunchTask": "GameDevTVJam Win64 Development Build",
+				"args": [
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.6",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.6",
+					"Z:\\UEVFS\\GameDevTVJam": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam",
+					"Z:\\UEVFS\\Root": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"name": "Launch GameDevTVJam (Test)",
+				"request": "launch",
+				"program": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"preLaunchTask": "GameDevTVJam Win64 Test Build",
+				"args": [
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.6",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.6",
+					"Z:\\UEVFS\\GameDevTVJam": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam",
+					"Z:\\UEVFS\\Root": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"name": "Launch GameDevTVJam (Shipping)",
+				"request": "launch",
+				"program": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"preLaunchTask": "GameDevTVJam Win64 Shipping Build",
+				"args": [
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.6",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.6",
+					"Z:\\UEVFS\\GameDevTVJam": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam",
+					"Z:\\UEVFS\\Root": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"name": "Launch GameDevTVJamEditor (Debug)",
+				"request": "launch",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"preLaunchTask": "GameDevTVJamEditor Win64 Debug Build",
+				"args": [
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject"
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.6",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.6",
+					"Z:\\UEVFS\\GameDevTVJam": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam",
+					"Z:\\UEVFS\\Root": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"name": "Launch GameDevTVJamEditor (DebugGame)",
+				"request": "launch",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"preLaunchTask": "GameDevTVJamEditor Win64 DebugGame Build",
+				"args": [
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject"
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.6",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.6",
+					"Z:\\UEVFS\\GameDevTVJam": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam",
+					"Z:\\UEVFS\\Root": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"name": "Launch GameDevTVJamEditor (Development)",
+				"request": "launch",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"preLaunchTask": "GameDevTVJamEditor Win64 Development Build",
+				"args": [
+					"C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject"
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.6",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.6",
+					"Z:\\UEVFS\\GameDevTVJam": "C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam",
+					"Z:\\UEVFS\\Root": "C:\\Program Files\\Epic Games\\UE_5.6"
+				}
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Build\\BatchFiles\\RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=C:\\Users\\farah\\OneDrive\\Desktop\\GameDevTVJam\\GameDevTVJam\\GameDevTVJam.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"env": {
+					"PATH": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64;${env:PATH}",
+					"DOTNET_ROOT": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64",
+					"DOTNET_HOST_PATH": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64\\dotnet.exe",
+					"DOTNET_MULTILEVEL_LOOKUP": "0",
+					"DOTNET_ROLL_FORWARD": "LatestMajor"
+				},
+				"console": "integratedTerminal",
+				"stopAtEntry": false,
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.6"
+			}
+		]
+	}
+}
