@@ -61,9 +61,9 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Game Phase")
 	void CancelDrawing();
 
-private:
-	void TickDrawPhase(float DeltaTime);
-	bool GetMousePositionOnDrawPlane(FVector& WorldPosition);
+public:
+	UFUNCTION(BlueprintCallable, Category="Draw Cursor")
+	bool GetMousePositionOnDrawPlane(FVector& WorldPosition) const;
 
 	void DrawDebugPlane();
 

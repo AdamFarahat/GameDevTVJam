@@ -43,11 +43,6 @@ void ABubbleController::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if (GamePhase == EGamePhase::Drawing)
-    {
-        TickDrawPhase(DeltaTime);
-    }
-
 #if WITH_EDITOR
     if (bDrawPlaneDebugEnabled)
         DrawDebugPlane();
@@ -55,21 +50,7 @@ void ABubbleController::Tick(float DeltaTime)
 }
 
 
-void ABubbleController::TickDrawPhase(float DeltaTime)
-{
-    FVector CursorPosition;
-    if (GetMousePositionOnDrawPlane(CursorPosition))
-    {
-        DrawCursor->SetCursorPosition(CursorPosition);
-    }
-    else
-    {
-        CancelDrawing();
-    }
-}
-
-
-bool ABubbleController::GetMousePositionOnDrawPlane(FVector& WorldPosition)
+bool ABubbleController::GetMousePositionOnDrawPlane(FVector& WorldPosition) const
 {
     FVector RayOrigin;
     FVector RayDirection;
