@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BubbleController.h"
+#include "Player/BubbleController.h"
 
-#include "DrawCursor.h"
+#include "Player/DrawCursor.h"
 
 #include "Kismet/GameplayStatics.h"
 
@@ -14,6 +14,28 @@ void ABubbleController::BeginPlay()
 
     DrawCursor = Cast<ADrawCursor>(UGameplayStatics::GetActorOfClass(GetWorld(), ADrawCursor::StaticClass()));
     checkf(DrawCursor != nullptr, TEXT("DrawCursor is null in ABubbleController::BeginPlay()"));
+
+    if (ULocalPlayer* LocalPlayer = GetLocalPlayer())
+    {
+        if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
+        {
+            Subsystem->AddMappingContext(IMC_Default, 0);
+        }
+    }
+}
+
+
+void ABubbleController::SetupInputComponent()
+{
+    Super::SetupInputComponent();
+
+    UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(InputComponent);
+    if (!EnhancedInput)
+    {
+        return;
+    }
+
+    EnhancedInput->BindAction(IA_DrawToggle, ETriggerEvent::Triggered, this, &ABubbleController::OnDrawToggle);
 }
 
 
@@ -21,17 +43,44 @@ void ABubbleController::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    // TODO on mouse move event
-    if (DrawCursor)
+    if (GamePhase == EGamePhase::Drawing)
     {
-        FVector CursorPosition;
-        if (GetMousePositionOnDrawPlane(CursorPosition))
-            DrawCursor->SetActorLocation(CursorPosition);
+        TickDrawPhase(DeltaTime);
     }
 
 #if WITH_EDITOR
-    DrawDebugPlane();
+    if (bDrawPlaneDebugEnabled)
+        DrawDebugPlane();
 #endif
+}
+
+
+void ABubbleController::TickDrawPhase(float DeltaTime)
+{
+    FVector CursorPosition;
+    if (GetMousePositionOnDrawPlane(CursorPosition))
+    {
+        DrawCursor->SetActorLocation(CursorPosition);
+    }
+    else
+    {
+        // TODO cancel draw
+    }
+}
+
+
+void ABubbleController::OnDrawToggle(const FInputActionValue& value)
+{
+    if (GamePhase == EGamePhase::Drawing)
+    {
+        // TODO if over a node, go to executing phase
+        GamePhase = EGamePhase::Planning;
+    }
+    else
+    {
+        // TODO only if selecting the player node
+        GamePhase = EGamePhase::Drawing;
+    }
 }
 
 
@@ -41,17 +90,23 @@ bool ABubbleController::GetMousePositionOnDrawPlane(FVector& WorldPosition)
     FVector RayDirection;
 
     if (!DeprojectMousePositionToWorld(RayOrigin, RayDirection))
+    {
         return false;
+    }
 
     FVector Normal = DrawPlaneNormal.GetSafeNormal();
     float Denom = FVector::DotProduct(RayDirection, Normal);
 
     if (FMath::Abs(Denom) < KINDA_SMALL_NUMBER)
+    {
         return false;
+    }
 
     float t = FVector::DotProduct(DrawPlaneOrigin - RayOrigin, Normal) / Denom;
     if (t < 0.f)
+    {
         return false;
+    }
 
     WorldPosition = RayOrigin + RayDirection * t;
     return true;
@@ -82,4 +137,10 @@ void ABubbleController::DrawDebugPlane()
         FVector B = DrawPlaneOrigin - Right * 0.5f * DrawPlaneDebugSize + Forward * Alpha * DrawPlaneDebugSize;
         DrawDebugLine(GetWorld(), A, B, FColor::Green, false, -1.f, 0, DrawPlaneDebugThickness);
     }
+}
+
+
+EGamePhase ABubbleController::GetGamePhase() const
+{
+    return GamePhase;
 }
