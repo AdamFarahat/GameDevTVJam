@@ -34,6 +34,7 @@ class GAMEDEVTVJAM_API ABubbleController : public APlayerController
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Draw Settings", meta = (AllowPrivateAccess = "true"))
 	FVector DrawPlaneNormal = FVector::UpVector;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Draw Settings", meta = (AllowPrivateAccess = "true"))
 	ADrawCursor* DrawCursor = nullptr;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Draw Settings|Debug", meta = (AllowPrivateAccess = "true"))
@@ -47,6 +48,7 @@ class GAMEDEVTVJAM_API ABubbleController : public APlayerController
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Draw Settings|Debug", meta = (AllowPrivateAccess = "true", ClampMin = "0"))
 	int DrawPlaneDebugLinesY = 20;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game Phase", meta = (AllowPrivateAccess = "true"))
 	EGamePhase GamePhase = EGamePhase::Planning;
 
 protected:
@@ -54,10 +56,13 @@ protected:
 	void SetupInputComponent() override;
 	void Tick(float DeltaTime) override;
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "Game Phase")
+	void OnDrawToggle(const FInputActionValue& value);
+	UFUNCTION(BlueprintImplementableEvent, Category = "Game Phase")
+	void CancelDrawing();
+
 private:
 	void TickDrawPhase(float DeltaTime);
-
-	void OnDrawToggle(const FInputActionValue& value);
 	bool GetMousePositionOnDrawPlane(FVector& WorldPosition);
 
 	void DrawDebugPlane();

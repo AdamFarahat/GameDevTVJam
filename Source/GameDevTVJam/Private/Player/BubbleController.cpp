@@ -64,24 +64,7 @@ void ABubbleController::TickDrawPhase(float DeltaTime)
     }
     else
     {
-        DrawCursor->ToggleOff();
-    }
-}
-
-
-void ABubbleController::OnDrawToggle(const FInputActionValue& value)
-{
-    if (GamePhase == EGamePhase::Drawing)
-    {
-        // TODO if over a node, go to executing phase
-        GamePhase = EGamePhase::Planning;
-        DrawCursor->ToggleOff();
-    }
-    else
-    {
-        // TODO only if selecting the player node
-        GamePhase = EGamePhase::Drawing;
-        DrawCursor->ToggleOn();
+        CancelDrawing();
     }
 }
 
