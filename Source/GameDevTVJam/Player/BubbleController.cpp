@@ -3,14 +3,58 @@
 
 #include "BubbleController.h"
 
+#include "DrawCursor.h"
+
+#include "Kismet/GameplayStatics.h"
+
+
+void ABubbleController::BeginPlay()
+{
+    Super::BeginPlay();
+
+    DrawCursor = Cast<ADrawCursor>(UGameplayStatics::GetActorOfClass(GetWorld(), ADrawCursor::StaticClass()));
+    checkf(DrawCursor != nullptr, TEXT("DrawCursor is null in ABubbleController::BeginPlay()"));
+}
+
 
 void ABubbleController::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
+    // TODO on mouse move event
+    if (DrawCursor)
+    {
+        FVector CursorPosition;
+        if (GetMousePositionOnDrawPlane(CursorPosition))
+            DrawCursor->SetActorLocation(CursorPosition);
+    }
+
 #if WITH_EDITOR
     DrawDebugPlane();
 #endif
+}
+
+
+bool ABubbleController::GetMousePositionOnDrawPlane(FVector& WorldPosition)
+{
+    FVector RayOrigin;
+    FVector RayDirection;
+
+    if (!DeprojectMousePositionToWorld(RayOrigin, RayDirection))
+        return false;
+
+    FVector Normal = DrawPlaneNormal.GetSafeNormal();
+    float Denom = FVector::DotProduct(RayDirection, Normal);
+
+    if (FMath::Abs(Denom) < KINDA_SMALL_NUMBER)
+        return false;
+
+    float t = FVector::DotProduct(DrawPlaneOrigin - RayOrigin, Normal) / Denom;
+    if (t < 0.f)
+        return false;
+
+    WorldPosition = RayOrigin + RayDirection * t;
+    return true;
 }
 
 void ABubbleController::DrawDebugPlane()
@@ -23,17 +67,17 @@ void ABubbleController::DrawDebugPlane()
     FVector Right = FVector::CrossProduct(Normal, FVector::ForwardVector).GetSafeNormal();
     FVector Forward = FVector::CrossProduct(Right, Normal).GetSafeNormal();
 
-    for (int X = 0; X < DrawPlaneDebugLinesX + 2; ++X)
+    for (int x = 0; x < DrawPlaneDebugLinesX + 2; ++x)
     {
-        float Alpha = FMath::Clamp((float)X / (DrawPlaneDebugLinesX + 1), 0.f, 1.f) - 0.5f;
+        float Alpha = FMath::Clamp((float)x / (DrawPlaneDebugLinesX + 1), 0.f, 1.f) - 0.5f;
         FVector A = DrawPlaneOrigin + Right * Alpha * DrawPlaneDebugSize + Forward * 0.5f * DrawPlaneDebugSize;
         FVector B = DrawPlaneOrigin + Right * Alpha * DrawPlaneDebugSize - Forward * 0.5f * DrawPlaneDebugSize;
         DrawDebugLine(GetWorld(), A, B, FColor::Green, false, -1.f, 0, DrawPlaneDebugThickness);
     }
 
-    for (int Y = 0; Y < DrawPlaneDebugLinesY + 2; ++Y)
+    for (int y = 0; y < DrawPlaneDebugLinesY + 2; ++y)
     {
-        float Alpha = FMath::Clamp((float)Y / (DrawPlaneDebugLinesY + 1), 0.f, 1.f) - 0.5f;
+        float Alpha = FMath::Clamp((float)y / (DrawPlaneDebugLinesY + 1), 0.f, 1.f) - 0.5f;
         FVector A = DrawPlaneOrigin + Right * 0.5f * DrawPlaneDebugSize + Forward * Alpha * DrawPlaneDebugSize;
         FVector B = DrawPlaneOrigin - Right * 0.5f * DrawPlaneDebugSize + Forward * Alpha * DrawPlaneDebugSize;
         DrawDebugLine(GetWorld(), A, B, FColor::Green, false, -1.f, 0, DrawPlaneDebugThickness);

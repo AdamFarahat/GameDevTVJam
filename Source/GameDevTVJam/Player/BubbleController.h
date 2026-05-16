@@ -6,6 +6,8 @@
 #include "GameFramework/PlayerController.h"
 #include "BubbleController.generated.h"
 
+class ADrawCursor;
+
 /**
  * 
  */
@@ -19,19 +21,23 @@ class GAMEDEVTVJAM_API ABubbleController : public APlayerController
 	UPROPERTY(EditAnywhere, Category = "Draw Settings")
 	FVector DrawPlaneNormal = FVector::UpVector;
 
-	UPROPERTY(EditAnywhere, Category = "Draw Settings")
+	ADrawCursor* DrawCursor = nullptr;
+
+	UPROPERTY(EditAnywhere, Category = "Draw Settings|Debug")
 	float DrawPlaneDebugSize = 500.f;
-	UPROPERTY(EditAnywhere, Category = "Draw Settings")
+	UPROPERTY(EditAnywhere, Category = "Draw Settings|Debug")
 	float DrawPlaneDebugThickness = 2.f;
-	UPROPERTY(EditAnywhere, Category = "Draw Settings", meta = (ClampMin = "0"))
+	UPROPERTY(EditAnywhere, Category = "Draw Settings|Debug", meta = (ClampMin = "0"))
 	int DrawPlaneDebugLinesX = 20;
-	UPROPERTY(EditAnywhere, Category = "Draw Settings", meta = (ClampMin = "0"))
+	UPROPERTY(EditAnywhere, Category = "Draw Settings|Debug", meta = (ClampMin = "0"))
 	int DrawPlaneDebugLinesY = 20;
 
-
 protected:
+	void BeginPlay() override;
 	void Tick(float DeltaTime) override;
 
 private:
+	bool GetMousePositionOnDrawPlane(FVector& WorldPosition);
+
 	void DrawDebugPlane();
 };
