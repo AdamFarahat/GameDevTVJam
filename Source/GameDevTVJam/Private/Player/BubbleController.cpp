@@ -60,11 +60,11 @@ void ABubbleController::TickDrawPhase(float DeltaTime)
     FVector CursorPosition;
     if (GetMousePositionOnDrawPlane(CursorPosition))
     {
-        DrawCursor->SetActorLocation(CursorPosition);
+        DrawCursor->SetCursorPosition(CursorPosition);
     }
     else
     {
-        // TODO cancel draw
+        DrawCursor->ToggleOff();
     }
 }
 
@@ -75,11 +75,13 @@ void ABubbleController::OnDrawToggle(const FInputActionValue& value)
     {
         // TODO if over a node, go to executing phase
         GamePhase = EGamePhase::Planning;
+        DrawCursor->ToggleOff();
     }
     else
     {
         // TODO only if selecting the player node
         GamePhase = EGamePhase::Drawing;
+        DrawCursor->ToggleOn();
     }
 }
 
