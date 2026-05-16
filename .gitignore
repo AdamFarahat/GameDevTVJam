@@ -108,3 +108,7 @@ Plugins/**/Intermediate/*
 # Ignore all local history of files
 .history
 .ionide
+
+
+.vsconfig
+*.code-workspace
