@@ -10,5 +10,8 @@ enum class EGamePhase : uint8
 {
 	Planning UMETA(DisplayName="Planning"),
 	Drawing UMETA(DisplayName="Drawing"),
-	Executing UMETA(DisplayName="Executing")
+	Prompting UMETA(DisplayName="Prompting"),
+	Executing UMETA(DisplayName="Executing"),
+	Win UMETA(DisplayName="Win"),
+	Lose UMETA(DisplayName="Lose")
 };
