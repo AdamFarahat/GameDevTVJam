@@ -34,9 +34,6 @@ class GAMEDEVTVJAM_API ABubbleController : public APlayerController
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Draw Settings", meta = (AllowPrivateAccess = "true"))
 	FVector DrawPlaneNormal = FVector::UpVector;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Draw Settings", meta = (AllowPrivateAccess = "true"))
-	ADrawCursor* DrawCursor = nullptr;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Draw Settings|Debug", meta = (AllowPrivateAccess = "true"))
 	bool bDrawPlaneDebugEnabled = true;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Draw Settings|Debug", meta = (AllowPrivateAccess = "true"))

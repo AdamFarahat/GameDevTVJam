@@ -12,9 +12,6 @@ void ABubbleController::BeginPlay()
 {
     Super::BeginPlay();
 
-    DrawCursor = Cast<ADrawCursor>(UGameplayStatics::GetActorOfClass(GetWorld(), ADrawCursor::StaticClass()));
-    checkf(DrawCursor != nullptr, TEXT("DrawCursor is null in ABubbleController::BeginPlay()"));
-
     if (ULocalPlayer* LocalPlayer = GetLocalPlayer())
     {
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
