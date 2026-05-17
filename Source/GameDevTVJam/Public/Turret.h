@@ -36,10 +36,10 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	UCapsuleComponent* CapsuleComp;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Category = "Meshes")
 	UStaticMeshComponent* BaseMesh;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Category = "Meshes")
 	UStaticMeshComponent* TurretMesh;
 
 	UPROPERTY(VisibleAnywhere)
@@ -53,10 +53,10 @@ public:
 	USoundBase* ExplosionSound;
 
 
-	//TowerTank
+	
 
 	//Main Character
-	AActor* MainCharacter;
+	APawn* MainCharacter;
 
 	UPROPERTY(EditAnywhere, Category = "Shooting")
 	float ShootingRange = 500.0f;
@@ -73,8 +73,7 @@ public:
 	void HandleDestruction();
 
 private:
-	float TurretZAngle = 0.0f;
 	bool InFireRange();
 	void Fire();
-	bool ShouldLookAtMainCharacter();
+	bool IsMainCharacterVisible();
 };

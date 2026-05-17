@@ -6,10 +6,6 @@
 
 ATurret::ATurret() {
 	PrimaryActorTick.bCanEverTick = true;
-	LightTurret = CreateDefaultSubobject<USpotLightComponent>(TEXT("LightTurret"));
-	LightTurret->SetupAttachment(TurretMesh);
-
-
 
 	CapsuleComp = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CapsuleComp"));
 	SetRootComponent(CapsuleComp);
@@ -19,6 +15,9 @@ ATurret::ATurret() {
 	TurretMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("TurretMesh"));;
 	TurretMesh->SetupAttachment(BaseMesh);
 
+	LightTurret = CreateDefaultSubobject<USpotLightComponent>(TEXT("LightTurret"));
+	LightTurret->SetupAttachment(TurretMesh);
+
 	ProjectileStartingPoint = CreateDefaultSubobject<USceneComponent>(TEXT("ProjectileStartingPoint"));;
 	ProjectileStartingPoint->SetupAttachment(TurretMesh);
 }
@@ -26,25 +25,28 @@ void ATurret::BeginPlay()
 {
 	Super::BeginPlay();
 
+	MainCharacter = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+
 	FTimerHandle FireTimerHandle;
 	GetWorldTimerManager().SetTimer(FireTimerHandle, this, &ATurret::CheckFireCondition, FireRate, true);
+
 }
 
 void ATurret::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (ShouldLookAtMainCharacter()) {
+	if (IsMainCharacterVisible()) {
 		RotateTurret(MainCharacter->GetActorLocation());
 	}
 }
-bool ATurret::ShouldLookAtMainCharacter() {
+bool ATurret::IsMainCharacterVisible() {
 	return MainCharacter && InFireRange();
 }
 
 void ATurret::CheckFireCondition()
 {
-	if (ShouldLookAtMainCharacter())
+	if (IsMainCharacterVisible())
 	{
 		Fire();
 	}
@@ -52,7 +54,7 @@ void ATurret::CheckFireCondition()
 void ATurret::RotateTurret(FVector LookAtTarget)
 {
 	FVector VectorToTarget = LookAtTarget - TurretMesh->GetComponentLocation();
-	FRotator LookAtRotation = FRotator(VectorToTarget.Rotation().Pitch, VectorToTarget.Rotation().Yaw, TurretZAngle);
+	FRotator LookAtRotation = FRotator(VectorToTarget.Rotation().Pitch, VectorToTarget.Rotation().Yaw, VectorToTarget.Rotation().Roll);
 	FRotator InterpolatedRotation = FMath::RInterpTo(TurretMesh->GetComponentRotation()
 		, LookAtRotation
 		, GetWorld()->GetDeltaSeconds()
@@ -78,7 +80,7 @@ void ATurret::HandleDestruction()
 		UGameplayStatics::PlaySoundAtLocation(GetWorld(), ExplosionSound, GetActorLocation());
 	}
 	else {
-		UE_LOG(LogTemp, Warning, TEXT("No sound for Explosion assigned. aka [ExplosionSound] in BaseTank."));
+		UE_LOG(LogTemp, Warning, TEXT("No sound for Explosion assigned in a Turret instance."));
 	}
 	Destroy();
 }

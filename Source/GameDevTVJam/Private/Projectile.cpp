@@ -36,7 +36,6 @@ void AProjectile::BeginPlay()
 void AProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void AProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
@@ -49,7 +48,7 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), HitParticles, GetActorLocation(), GetActorRotation());
 		}*/
 	}
-	if (LaunchSound) {
+	if (HitSound) {
 		UGameplayStatics::PlaySoundAtLocation(GetWorld(), HitSound, GetActorLocation());
 	}
 	else {
@@ -57,8 +56,8 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 	}
 
 	if (CamShake) {
-		if (APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0)) {
-			PC->ClientStartCameraShake(CamShake);
+		if (APlayerController* Pc = UGameplayStatics::GetPlayerController(GetWorld(), 0)) {
+			Pc->ClientStartCameraShake(CamShake);
 		}
 	}
 
