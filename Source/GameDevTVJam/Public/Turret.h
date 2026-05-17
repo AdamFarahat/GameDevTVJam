@@ -29,6 +29,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+
 	//BaseTank
 	UPROPERTY(EditAnywhere, Category = "Turret Motion")
 	float TurretRotationSpeed = 10.0f;
@@ -58,8 +59,10 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "Sounds")
 	USoundBase* ExplosionSound;
-
-
+	UPROPERTY(EditAnywhere, Category = "Scan")
+	TArray<FRotator> ScanRotations;
+	UPROPERTY(EditAnywhere, Category = "Scan")
+	float ScanRotationSpeed = 5.0f;
 	
 
 	//Main Character
@@ -80,9 +83,14 @@ public:
 	void HandleDestruction();
 
 private:
+	int CurrentScanIndex = 0;
+	float ScanErrorTolerance = 1.0f;
 	ABubbleController* BC;
 	bool bPassiveLightHasBeenSet = false;
 	bool InFireRange();
 	void Fire();
 	bool IsMainCharacterVisible();
+	void ScanArea();
+	void ResetScan();
+
 };

@@ -49,7 +49,26 @@ void ATurret::Tick(float DeltaTime)
 	}
 	else if (!bPassiveLightHasBeenSet) {
 		LightTurret->SetLightColor(PassiveColorMode);
+		ResetScan();
 		bPassiveLightHasBeenSet = true;
+	}
+	else {
+		ScanArea();
+	}
+}
+void ATurret::ResetScan() {
+	CurrentScanIndex = 0;
+}
+void ATurret::ScanArea() {
+	FRotator InterpolatedRotation = FMath::RInterpTo(TurretMesh->GetComponentRotation()
+			, ScanRotations[CurrentScanIndex]
+			, GetWorld()->GetDeltaSeconds()
+			, ScanRotationSpeed
+		);
+
+	TurretMesh->SetWorldRotation(InterpolatedRotation);
+	if (TurretMesh->GetComponentRotation().Equals(ScanRotations[CurrentScanIndex], ScanErrorTolerance)) {
+		CurrentScanIndex = (CurrentScanIndex + 1) % ScanRotations.Num();
 	}
 }
 
