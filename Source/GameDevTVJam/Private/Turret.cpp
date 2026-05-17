@@ -60,14 +60,17 @@ void ATurret::ResetScan() {
 	CurrentScanIndex = 0;
 }
 void ATurret::ScanArea() {
-	FRotator InterpolatedRotation = FMath::RInterpTo(TurretMesh->GetComponentRotation()
-			, ScanRotations[CurrentScanIndex]
-			, GetWorld()->GetDeltaSeconds()
-			, ScanRotationSpeed
+	// Use ConstantTo for a steady speed, and RelativeRotation to stay relative to the Turret's base
+	FRotator InterpolatedRotation = FMath::RInterpConstantTo(
+			TurretMesh->GetRelativeRotation(),
+			ScanRotations[CurrentScanIndex],
+			GetWorld()->GetDeltaSeconds(),
+			ScanRotationSpeed
 		);
 
-	TurretMesh->SetWorldRotation(InterpolatedRotation);
-	if (TurretMesh->GetComponentRotation().Equals(ScanRotations[CurrentScanIndex], ScanErrorTolerance)) {
+	TurretMesh->SetRelativeRotation(InterpolatedRotation);
+
+	if (TurretMesh->GetRelativeRotation().Equals(ScanRotations[CurrentScanIndex], ScanErrorTolerance)) {
 		CurrentScanIndex = (CurrentScanIndex + 1) % ScanRotations.Num();
 	}
 }
@@ -122,6 +125,7 @@ void ATurret::Fire() {
 	FVector SpawnLoc = ProjectileStartingPoint->GetComponentLocation();
 	FRotator SpawnRot = ProjectileStartingPoint->GetComponentRotation();
 	if (AProjectile* Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, SpawnLoc, SpawnRot)) {
+		UE_LOG(LogTemp, Display, TEXT("Spawned Projectile"));
 		Projectile->SetOwner(this);
 	}
 }

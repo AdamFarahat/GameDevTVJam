@@ -5,8 +5,9 @@
 #include "NiagaraSystem.h"
 #include "NiagaraComponent.h"
 #include "NiagaraFunctionLibrary.h"
-
+#include "Turret.h"
 #include "Kismet/GameplayStatics.h"
+
 
 // Sets default values
 AProjectile::AProjectile()
@@ -46,7 +47,14 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 {
 	AActor* OwnerOfProjectile = GetOwner();
 	if (OwnerOfProjectile && OtherActor && OtherActor != Owner && OtherActor != this) {
-		UGameplayStatics::ApplyDamage(OtherActor, Damage, OwnerOfProjectile->GetInstigatorController(), this, UDamageType::StaticClass());
+
+		APawn* HitPawn = Cast<APawn>(OtherActor);
+		ATurret* TurretOwner = Cast<ATurret>(OwnerOfProjectile);
+		if (HitPawn && TurretOwner && HitPawn == TurretOwner->MainCharacter)
+		{
+			// Play bubble pop animation here
+			UE_LOG(LogTemp, Display, TEXT("Death do be implemented"));
+		}
 
 		if (HitParticles) {
 			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), HitParticles, GetActorLocation(), GetActorRotation());
