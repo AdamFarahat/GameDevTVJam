@@ -36,13 +36,11 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	UProjectileMovementComponent* ProjMovementComp;
 
-	/*
-	* TO BE DISCUSSED
-	* 
+
 	UPROPERTY(VisibleAnywhere)
-	UNiagaraComponent* TrailParticles;
+	class UNiagaraComponent* TrailParticles;
 	UPROPERTY(EditAnywhere)
-	UNiagaraSystem* HitParticles; */
+	class UNiagaraSystem* HitParticles; 
 
 	UPROPERTY(EditAnywhere)
 	USoundBase* LaunchSound;

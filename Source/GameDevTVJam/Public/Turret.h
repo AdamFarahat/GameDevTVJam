@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 
 #include "Components/SpotLightComponent.h"
-
+#include "Player/BubbleController.h"
 #include "GameFramework/Actor.h"
 #include "Components/CapsuleComponent.h"
 #include "Projectile.h"
@@ -42,14 +42,21 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Meshes")
 	UStaticMeshComponent* TurretMesh;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Light States")
+	FLinearColor ActiveColorMode = FLinearColor::Red;
+	
+	UPROPERTY(EditAnywhere, Category = "Light States")
+	FLinearColor PassiveColorMode = FLinearColor::Yellow;
+
+	
+	UPROPERTY(VisibleAnywhere, Category = "Shooting")
 	USceneComponent* ProjectileStartingPoint;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Shooting")
 	TSubclassOf<AProjectile> ProjectileClass;
 
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Sounds")
 	USoundBase* ExplosionSound;
 
 
@@ -73,6 +80,8 @@ public:
 	void HandleDestruction();
 
 private:
+	ABubbleController* BC;
+	bool bPassiveLightHasBeenSet = false;
 	bool InFireRange();
 	void Fire();
 	bool IsMainCharacterVisible();

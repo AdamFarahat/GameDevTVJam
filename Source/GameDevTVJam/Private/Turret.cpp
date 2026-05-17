@@ -26,7 +26,13 @@ void ATurret::BeginPlay()
 	Super::BeginPlay();
 
 	MainCharacter = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
-
+	APlayerController* Pc = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	if (Pc) {
+		BC = Cast<ABubbleController>(Pc);
+	}
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("No PlayerController found in a Turret instance."));
+	}
 	FTimerHandle FireTimerHandle;
 	GetWorldTimerManager().SetTimer(FireTimerHandle, this, &ATurret::CheckFireCondition, FireRate, true);
 
@@ -37,11 +43,38 @@ void ATurret::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	if (IsMainCharacterVisible()) {
+		LightTurret->SetLightColor(ActiveColorMode);
 		RotateTurret(MainCharacter->GetActorLocation());
+		bPassiveLightHasBeenSet = false;
+	}
+	else if (!bPassiveLightHasBeenSet) {
+		LightTurret->SetLightColor(PassiveColorMode);
+		bPassiveLightHasBeenSet = true;
 	}
 }
+
+//Performing a line trace at the end to ensure last condition as it is the most expensive one.
 bool ATurret::IsMainCharacterVisible() {
-	return MainCharacter && InFireRange();
+	APlayerController* Pc = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+
+	if (BC->GetGamePhase() != EGamePhase::Executing) {
+		return false;
+	}
+	if(!InFireRange()) {
+		return false;
+	}
+
+	
+	FHitResult HitResult;
+	FVector StartLoc = TurretMesh->GetComponentLocation();
+	FVector EndLoc = MainCharacter->GetActorLocation();
+	FCollisionQueryParams Params;
+	Params.AddIgnoredActor(this);
+	Params.AddIgnoredActor(MainCharacter);
+	GetWorld()->LineTraceSingleByChannel(HitResult, StartLoc, EndLoc, ECC_Visibility, Params);
+
+	return !HitResult.bBlockingHit;
+	
 }
 
 void ATurret::CheckFireCondition()
@@ -64,7 +97,7 @@ void ATurret::RotateTurret(FVector LookAtTarget)
 	TurretMesh->SetWorldRotation(InterpolatedRotation);
 }
 bool ATurret::InFireRange() {
-	return (FVector::Distance(TurretMesh->GetComponentLocation(), MainCharacter->GetActorLocation()) <= ShootingRange);
+	return MainCharacter && (FVector::Distance(TurretMesh->GetComponentLocation(), MainCharacter->GetActorLocation()) <= ShootingRange);
 }
 void ATurret::Fire() {
 	FVector SpawnLoc = ProjectileStartingPoint->GetComponentLocation();

@@ -2,6 +2,10 @@
 
 
 #include "Projectile.h"
+#include "NiagaraSystem.h"
+#include "NiagaraComponent.h"
+#include "NiagaraFunctionLibrary.h"
+
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values
@@ -44,9 +48,9 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 	if (OwnerOfProjectile && OtherActor && OtherActor != Owner && OtherActor != this) {
 		UGameplayStatics::ApplyDamage(OtherActor, Damage, OwnerOfProjectile->GetInstigatorController(), this, UDamageType::StaticClass());
 
-		/*if (HitParticles) {
+		if (HitParticles) {
 			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), HitParticles, GetActorLocation(), GetActorRotation());
-		}*/
+		}
 	}
 	if (HitSound) {
 		UGameplayStatics::PlaySoundAtLocation(GetWorld(), HitSound, GetActorLocation());
