@@ -60,6 +60,8 @@ void ATurret::ResetScan() {
 	CurrentScanIndex = 0;
 }
 void ATurret::ScanArea() {
+	if (ScanRotations.Num() == 0) return;
+
 	// Use ConstantTo for a steady speed, and RelativeRotation to stay relative to the Turret's base
 	FRotator InterpolatedRotation = FMath::RInterpConstantTo(
 			TurretMesh->GetRelativeRotation(),
@@ -70,7 +72,10 @@ void ATurret::ScanArea() {
 
 	TurretMesh->SetRelativeRotation(InterpolatedRotation);
 
-	if (TurretMesh->GetRelativeRotation().Equals(ScanRotations[CurrentScanIndex], ScanErrorTolerance)) {
+	// Compare against the interpolated rotation rather than GetRelativeRotation() 
+	// to avoid issues with Unreal's internal rotator normalization (e.g., converting 270 to -90)
+	if (InterpolatedRotation.Equals(ScanRotations[CurrentScanIndex], ScanErrorTolerance)) {
+		UE_LOG(LogTemp, Display, TEXT("rotating to %d"), CurrentScanIndex);
 		CurrentScanIndex = (CurrentScanIndex + 1) % ScanRotations.Num();
 	}
 }
@@ -104,12 +109,12 @@ void ATurret::CheckFireCondition()
 	if (IsMainCharacterVisible())
 	{
 		Fire();
-	}
+	}  else UE_LOG(LogTemp, Display, TEXT("not visible"));
 }
 void ATurret::RotateTurret(FVector LookAtTarget)
 {
 	FVector VectorToTarget = LookAtTarget - TurretMesh->GetComponentLocation();
-	FRotator LookAtRotation = FRotator(VectorToTarget.Rotation().Pitch, VectorToTarget.Rotation().Yaw, VectorToTarget.Rotation().Roll);
+	FRotator LookAtRotation = FRotator(VectorToTarget.Rotation().Pitch, VectorToTarget.Rotation().Yaw, 0.0f);
 	FRotator InterpolatedRotation = FMath::RInterpTo(TurretMesh->GetComponentRotation()
 		, LookAtRotation
 		, GetWorld()->GetDeltaSeconds()
@@ -140,6 +145,9 @@ void ATurret::HandleDestruction()
 	}
 	Destroy();
 }
+
+
+
 
 
 

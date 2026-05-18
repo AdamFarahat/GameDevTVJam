@@ -84,7 +84,7 @@ public:
 
 private:
 	int CurrentScanIndex = 0;
-	float ScanErrorTolerance = 1.0f;
+	float ScanErrorTolerance = 5.0f;
 	ABubbleController* BC;
 	bool bPassiveLightHasBeenSet = false;
 	bool InFireRange();
