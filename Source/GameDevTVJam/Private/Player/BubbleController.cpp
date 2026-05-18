@@ -12,9 +12,6 @@ void ABubbleController::BeginPlay()
 {
     Super::BeginPlay();
 
-    DrawCursor = Cast<ADrawCursor>(UGameplayStatics::GetActorOfClass(GetWorld(), ADrawCursor::StaticClass()));
-    checkf(DrawCursor != nullptr, TEXT("DrawCursor is null in ABubbleController::BeginPlay()"));
-
     if (ULocalPlayer* LocalPlayer = GetLocalPlayer())
     {
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
@@ -43,11 +40,6 @@ void ABubbleController::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if (GamePhase == EGamePhase::Drawing)
-    {
-        TickDrawPhase(DeltaTime);
-    }
-
 #if WITH_EDITOR
     if (bDrawPlaneDebugEnabled)
         DrawDebugPlane();
@@ -55,38 +47,7 @@ void ABubbleController::Tick(float DeltaTime)
 }
 
 
-void ABubbleController::TickDrawPhase(float DeltaTime)
-{
-    FVector CursorPosition;
-    if (GetMousePositionOnDrawPlane(CursorPosition))
-    {
-        DrawCursor->SetCursorPosition(CursorPosition);
-    }
-    else
-    {
-        DrawCursor->ToggleOff();
-    }
-}
-
-
-void ABubbleController::OnDrawToggle(const FInputActionValue& value)
-{
-    if (GamePhase == EGamePhase::Drawing)
-    {
-        // TODO if over a node, go to executing phase
-        GamePhase = EGamePhase::Planning;
-        DrawCursor->ToggleOff();
-    }
-    else
-    {
-        // TODO only if selecting the player node
-        GamePhase = EGamePhase::Drawing;
-        DrawCursor->ToggleOn();
-    }
-}
-
-
-bool ABubbleController::GetMousePositionOnDrawPlane(FVector& WorldPosition)
+bool ABubbleController::GetMousePositionOnDrawPlane(FVector& WorldPosition) const
 {
     FVector RayOrigin;
     FVector RayDirection;
