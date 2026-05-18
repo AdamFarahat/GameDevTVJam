@@ -25,9 +25,7 @@ class GAMEDEVTVJAM_API ABubbleController : public APlayerController
 	GENERATED_BODY()
 
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	UInputMappingContext* IMC_Default;
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	UInputAction* IA_DrawToggle;
+	UInputMappingContext* IMC_Bubble;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Draw Settings", meta = (AllowPrivateAccess = "true"))
 	FVector DrawPlaneOrigin = FVector::ZeroVector;
@@ -52,11 +50,6 @@ protected:
 	void BeginPlay() override;
 	void SetupInputComponent() override;
 	void Tick(float DeltaTime) override;
-
-	UFUNCTION(BlueprintImplementableEvent, Category = "Game Phase")
-	void OnDrawToggle(const FInputActionValue& value);
-	UFUNCTION(BlueprintImplementableEvent, Category = "Game Phase")
-	void CancelDrawing();
 
 public:
 	UFUNCTION(BlueprintCallable, Category="Draw Cursor")
