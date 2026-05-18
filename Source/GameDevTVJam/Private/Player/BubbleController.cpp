@@ -16,23 +16,9 @@ void ABubbleController::BeginPlay()
     {
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
         {
-            Subsystem->AddMappingContext(IMC_Default, 0);
+            Subsystem->AddMappingContext(IMC_Bubble, 0);
         }
     }
-}
-
-
-void ABubbleController::SetupInputComponent()
-{
-    Super::SetupInputComponent();
-
-    UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(InputComponent);
-    if (!EnhancedInput)
-    {
-        return;
-    }
-
-    EnhancedInput->BindAction(IA_DrawToggle, ETriggerEvent::Triggered, this, &ABubbleController::OnDrawToggle);
 }
 
 
