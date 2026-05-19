@@ -48,7 +48,6 @@ class GAMEDEVTVJAM_API ABubbleController : public APlayerController
 
 protected:
 	void BeginPlay() override;
-	void SetupInputComponent() override;
 	void Tick(float DeltaTime) override;
 
 public:
