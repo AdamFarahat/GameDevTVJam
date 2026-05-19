@@ -51,7 +51,7 @@ public:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UCameraShakeBase> CamShake;
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
 
