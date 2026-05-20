@@ -14,7 +14,17 @@ class GAMEDEVTVJAM_API URotationStrategy : public UObject
 {
 	GENERATED_BODY()
 
+	TUniquePtr<FWorldContext> WorldContext;
+
 public:
+	void SetWorldContext(UObject* NewWorldContext);
+
+	UFUNCTION(BlueprintCallable)
+	UObject* GetWorldContextObject();
+
+	UWorld* GetWorld() const final;
+	FWorldContext* GetWorldContext() const { return WorldContext.Get(); };
+
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void InitStrategy(const AActor* Owner);
 

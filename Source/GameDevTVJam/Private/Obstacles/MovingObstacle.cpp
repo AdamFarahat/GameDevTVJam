@@ -13,11 +13,13 @@ void UMovingObstacle::BeginPlay()
 
 	if (TranslationStrategy)
 	{
+		TranslationStrategy->SetWorldContext(GetWorld());
 		TranslationStrategy->InitStrategy(GetOwner());
 	}
 
 	if (RotationStrategy)
 	{
+		RotationStrategy->SetWorldContext(GetWorld());
 		RotationStrategy->InitStrategy(GetOwner());
 	}
 }
