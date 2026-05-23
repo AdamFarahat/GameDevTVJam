@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{606AE81A-7CE1-46E8-937F-A64D0CA769C9}" SchemaVersion="133">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{606AE81A-7CE1-46E8-937F-A64D0CA769C9}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Test Session" ID="{EFC13FD5-B486-4C21-B3B3-C5946C97B399}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="TestEvent" ID="{4CCF26CA-52EC-424A-8CC5-EEFF5B1B0445}" WorkUnitID="{188C7E11-F55F-4C38-B280-92E29F55C182}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

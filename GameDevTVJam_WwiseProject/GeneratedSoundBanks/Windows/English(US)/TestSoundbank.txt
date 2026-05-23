@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1097980931	TestEvent			\Default Work Unit\TestEvent	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	419507423	Puzzle_Solved	.cache\BC\{BCC5F6D9-D64A-C397-D758-3E6EF5B41DCB}.wem		\Containers\Default Work Unit\Puzzle_Solved		2117728
+

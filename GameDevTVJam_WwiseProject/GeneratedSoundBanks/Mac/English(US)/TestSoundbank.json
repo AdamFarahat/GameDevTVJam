@@ -1,0 +1,47 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1831431028",
+    "Type": "User",
+    "GUID": "{F3638E98-DE6D-49D8-9FBB-7E4E201966C4}",
+    "Language": "English(US)",
+    "Hash": "{F63B62AD-4B7C-B733-B887-119617FA6F22}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\TestSoundbank",
+    "ShortName": "TestSoundbank",
+    "Path": "English(US)/TestSoundbank.bnk",
+    "Media": [
+     {
+      "Id": "419507423",
+      "Language": "English(US)",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Puzzle_Solved.wav",
+      "CachePath": "BC/{BCC5F6D9-D64A-C397-D758-3E6EF5B41DCB}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1097980931",
+      "Name": "TestEvent",
+      "ObjectPath": "\\Events\\Default Work Unit\\TestEvent",
+      "GUID": "{4CCF26CA-52EC-424A-8CC5-EEFF5B1B0445}",
+      "DurationType": "OneShot",
+      "DurationMin": "11.029333",
+      "DurationMax": "11.029333",
+      "MediaRefs": [
+       {
+        "Id": "419507423"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{F3CD2184-61D8-13C4-5E5B-C93A80F62803}"
+ }
+}
