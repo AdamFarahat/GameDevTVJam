@@ -30,9 +30,12 @@ ABasicTesla::ABasicTesla()
 void ABasicTesla::BeginPlay()
 {
 	Super::BeginPlay();
-
+	
+	TraceShape = FCollisionShape::MakeSphere(BeamThicknessRadius);
 	FTimerHandle ToggleTimerHandle;
 	GetWorld()->GetTimerManager().SetTimer(ToggleTimerHandle, this, &ABasicTesla::ToggleTesla, ToggleInterval, true);
+
+	
 }
 
 // Called every frame
@@ -61,7 +64,9 @@ bool ABasicTesla::IsShockingPlayer(AActor*& OutTargetActor) {
 	Params.AddIgnoredActor(this);
 	Params.AddIgnoredComponent(RightPole);
 	Params.AddIgnoredComponent(LeftPole);
-	GetWorld()->LineTraceSingleByChannel(HitResult, StartLoc, EndLoc, ECC_Visibility, Params);
+
+	
+	GetWorld()->SweepSingleByChannel(HitResult, StartLoc, EndLoc, FQuat::Identity, ECC_Visibility, TraceShape, Params);
 
 	if (HitResult.bBlockingHit) {
 		AActor* HitActor = HitResult.GetActor();
