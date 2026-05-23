@@ -23,11 +23,16 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	
+	UPROPERTY(EditAnywhere)
+	float BeamThicknessRadius = 20.0f;
 	UPROPERTY(EditAnywhere)
 	float ToggleInterval = 2.0f;
 	UPROPERTY(EditAnywhere)
 	class UNiagaraSystem* TeslaBeam;
+	UPROPERTY(EditAnywhere)
+	FName BeamStartParameterName = "Beam Start";
+	UPROPERTY(EditAnywhere)
+	FName BeamEndParameterName = "Beam End";
 
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* RightPole;
@@ -47,7 +52,7 @@ public:
 	float PoleMoveSpeed = 1.0f;
 	
 	UFUNCTION(BlueprintCallable)
-	bool IsShockingPlayer();
+	bool IsShockingPlayer(AActor*& OutTargetActor);
 	
 	enum class ETeslaPoleState
 	{
@@ -57,14 +62,15 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USceneComponent* Root;
 private:
-	
+	FCollisionShape TraceShape;
 	ETeslaPoleState CurrentPoleStateRight = ETeslaPoleState::TowardsInitial;
 	ETeslaPoleState CurrentPoleStateLeft = ETeslaPoleState::TowardsInitial;
 	bool bIsActive = false;
 	class UNiagaraComponent* BeamNiagaraComponent;
-	void UpdatePole(UStaticMeshComponent* Pole, const FVector& InitialLocation, const FVector& FinalLocation, float DeltaTime, ETeslaPoleState PoleState);
+	void UpdatePole(UStaticMeshComponent* Pole, const FVector& InitialLocation
+		, const FVector& FinalLocation, float DeltaTime, ETeslaPoleState& PoleState);
 	void ToggleTesla();
-	void UpdateBeamEndLocation();
+	void UpdateBeamEndsLocation();
 
 
 };

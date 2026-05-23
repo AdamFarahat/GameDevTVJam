@@ -20,6 +20,8 @@ ABasicTesla::ABasicTesla()
 	SetRootComponent(Root);
 	RightPole->SetupAttachment(Root);
 	LeftPole->SetupAttachment(Root);
+	InitialRelativeLocationLeftPole = LeftPole->GetRelativeLocation();
+	InitialRelativeLocationRightPole = RightPole->GetRelativeLocation();
 	
 
 }
@@ -41,15 +43,17 @@ void ABasicTesla::Tick(float DeltaTime)
 	UpdatePole(RightPole, InitialRelativeLocationRightPole, FinalRelativeLocationRightPole, DeltaTime, CurrentPoleStateRight);
 	UpdatePole(LeftPole, InitialRelativeLocationLeftPole, FinalRelativeLocationLeftPole, DeltaTime, CurrentPoleStateLeft);
 	if (BeamNiagaraComponent) {
-		UpdateBeamEndLocation();
+		UpdateBeamEndsLocation();
 	}
 }
 
-void ABasicTesla::UpdateBeamEndLocation() {
-	BeamNiagaraComponent->SetVectorParameter(TEXT("BeamEnd"), LeftPole->GetComponentLocation());
+void ABasicTesla::UpdateBeamEndsLocation() {
+	BeamNiagaraComponent->SetVectorParameter(BeamStartParameterName, LeftPole->GetComponentLocation());
+	BeamNiagaraComponent->SetVectorParameter(BeamEndParameterName, RightPole->GetComponentLocation());
 }
 
-bool ABasicTesla::IsShockingPlayer() {
+bool ABasicTesla::IsShockingPlayer(AActor*& OutTargetActor) {
+	OutTargetActor = nullptr;
 	FHitResult HitResult;
 	FVector StartLoc = RightPole->GetComponentLocation();
 	FVector EndLoc = LeftPole->GetComponentLocation();
@@ -60,7 +64,9 @@ bool ABasicTesla::IsShockingPlayer() {
 	GetWorld()->LineTraceSingleByChannel(HitResult, StartLoc, EndLoc, ECC_Visibility, Params);
 
 	if (HitResult.bBlockingHit) {
-		if (auto Bubble = Cast<ABubblePawn>(HitResult.GetActor())) {
+		AActor* HitActor = HitResult.GetActor();
+		if (auto Bubble = Cast<ABubblePawn>(HitActor)) {
+			OutTargetActor = HitActor;
 			return true;
 		}
 	}
@@ -74,7 +80,7 @@ void ABasicTesla::ToggleTesla()
 		BeamNiagaraComponent = UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), TeslaBeam
 			, RightPole->GetComponentLocation(), FRotator::ZeroRotator);
 		if (BeamNiagaraComponent) {
-			BeamNiagaraComponent->SetVectorParameter(TEXT("BeamEnd"), LeftPole->GetComponentLocation());
+			BeamNiagaraComponent->SetVectorParameter(BeamEndParameterName, LeftPole->GetComponentLocation());
 			BeamNiagaraComponent->AttachToComponent(RightPole, FAttachmentTransformRules::KeepWorldTransform);
 		}
 	}
@@ -87,26 +93,28 @@ void ABasicTesla::ToggleTesla()
 }
 
 void ABasicTesla::UpdatePole(UStaticMeshComponent* Pole, const FVector& InitialLocation
-	, const FVector& FinalLocation, float DeltaTime, ETeslaPoleState PoleState)
+	, const FVector& FinalLocation, float DeltaTime, ETeslaPoleState& PoleState)
 {
 	switch (PoleState)
 	{
-		// this code smells ( code duplication ) but there are too many function calls 
-		// to make it more efficient without making it less readable, so here we are
-		case ETeslaPoleState::TowardsInitial:
-			FVector NewLocation = FMath::VInterpConstantTo(Pole->GetRelativeLocation(), InitialLocation, DeltaTime, PoleMoveSpeed);
-			Pole->SetRelativeLocation(NewLocation);
-			if (NewLocation.Equals(InitialLocation, 1.0f)) {
-				PoleState = ETeslaPoleState::TowardsFinal;
-			}
-			break;
-		case ETeslaPoleState::TowardsFinal:
-			NewLocation = FMath::VInterpConstantTo(Pole->GetRelativeLocation(), FinalLocation, DeltaTime, PoleMoveSpeed);
-			Pole->SetRelativeLocation(NewLocation);
-			if (NewLocation.Equals(FinalLocation, 1.0f)) {
-				PoleState = ETeslaPoleState::TowardsInitial;
-			}
-			break;
+	case ETeslaPoleState::TowardsInitial:
+	{
+		FVector NewLocation = FMath::VInterpConstantTo(Pole->GetRelativeLocation(), InitialLocation, DeltaTime, PoleMoveSpeed);
+		Pole->SetRelativeLocation(NewLocation);
+		if (NewLocation.Equals(InitialLocation, 1.0f)) {
+			PoleState = ETeslaPoleState::TowardsFinal;
+		}
+		break;
+	}
+	case ETeslaPoleState::TowardsFinal:
+	{
+		FVector NewLocation = FMath::VInterpConstantTo(Pole->GetRelativeLocation(), FinalLocation, DeltaTime, PoleMoveSpeed);
+		Pole->SetRelativeLocation(NewLocation);
+		if (NewLocation.Equals(FinalLocation, 1.0f)) {
+			PoleState = ETeslaPoleState::TowardsInitial;
+		}
+		break;
+	}
 	}
 }
 
