@@ -8,6 +8,7 @@
 UENUM(BlueprintType)
 enum class EGamePhase : uint8
 {
+	Waiting UMETA(DisplayName="Waiting"),
 	Planning UMETA(DisplayName="Planning"),
 	Drawing UMETA(DisplayName="Drawing"),
 	Prompting UMETA(DisplayName="Prompting"),
