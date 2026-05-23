@@ -12,41 +12,19 @@ void ABubbleController::BeginPlay()
 {
     Super::BeginPlay();
 
-    DrawCursor = Cast<ADrawCursor>(UGameplayStatics::GetActorOfClass(GetWorld(), ADrawCursor::StaticClass()));
-    checkf(DrawCursor != nullptr, TEXT("DrawCursor is null in ABubbleController::BeginPlay()"));
-
     if (ULocalPlayer* LocalPlayer = GetLocalPlayer())
     {
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
         {
-            Subsystem->AddMappingContext(IMC_Default, 0);
+            Subsystem->AddMappingContext(IMC_Bubble, 0);
         }
     }
-}
-
-
-void ABubbleController::SetupInputComponent()
-{
-    Super::SetupInputComponent();
-
-    UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(InputComponent);
-    if (!EnhancedInput)
-    {
-        return;
-    }
-
-    EnhancedInput->BindAction(IA_DrawToggle, ETriggerEvent::Triggered, this, &ABubbleController::OnDrawToggle);
 }
 
 
 void ABubbleController::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
-
-    if (GamePhase == EGamePhase::Drawing)
-    {
-        TickDrawPhase(DeltaTime);
-    }
 
 #if WITH_EDITOR
     if (bDrawPlaneDebugEnabled)
@@ -55,38 +33,7 @@ void ABubbleController::Tick(float DeltaTime)
 }
 
 
-void ABubbleController::TickDrawPhase(float DeltaTime)
-{
-    FVector CursorPosition;
-    if (GetMousePositionOnDrawPlane(CursorPosition))
-    {
-        DrawCursor->SetCursorPosition(CursorPosition);
-    }
-    else
-    {
-        DrawCursor->ToggleOff();
-    }
-}
-
-
-void ABubbleController::OnDrawToggle(const FInputActionValue& value)
-{
-    if (GamePhase == EGamePhase::Drawing)
-    {
-        // TODO if over a node, go to executing phase
-        GamePhase = EGamePhase::Planning;
-        DrawCursor->ToggleOff();
-    }
-    else
-    {
-        // TODO only if selecting the player node
-        GamePhase = EGamePhase::Drawing;
-        DrawCursor->ToggleOn();
-    }
-}
-
-
-bool ABubbleController::GetMousePositionOnDrawPlane(FVector& WorldPosition)
+bool ABubbleController::GetMousePositionOnDrawPlane(FVector& WorldPosition) const
 {
     FVector RayOrigin;
     FVector RayDirection;
