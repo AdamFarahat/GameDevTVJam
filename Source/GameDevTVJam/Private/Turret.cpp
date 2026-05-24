@@ -97,6 +97,7 @@ bool ATurret::IsMainCharacterVisible() {
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(this);
 	Params.AddIgnoredActor(MainCharacter);
+	
 	GetWorld()->LineTraceSingleByChannel(HitResult, StartLoc, EndLoc, ECC_Visibility, Params);
 
 	return !HitResult.bBlockingHit;
@@ -129,7 +130,6 @@ void ATurret::Fire() {
 	FVector SpawnLoc = ProjectileStartingPoint->GetComponentLocation();
 	FRotator SpawnRot = ProjectileStartingPoint->GetComponentRotation();
 	if (AProjectile* Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, SpawnLoc, SpawnRot)) {
-		UE_LOG(LogTemp, Display, TEXT("Spawned Projectile"));
 		Projectile->SetOwner(this);
 	}
 }

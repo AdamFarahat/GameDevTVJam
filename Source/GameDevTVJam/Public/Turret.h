@@ -72,7 +72,8 @@ public:
 	float ShootingRange = 500.0f;
 	UPROPERTY(EditAnywhere, Category = "Shooting")
 	float FireRate = 2.0f;
-
+	UPROPERTY(EditAnywhere, Category = "Collision")
+	TEnumAsByte<ECollisionChannel> CollisionChannel;
 	UPROPERTY(VisibleAnywhere)
 	USpotLightComponent* LightTurret;
 
