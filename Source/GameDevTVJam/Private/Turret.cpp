@@ -98,7 +98,7 @@ bool ATurret::IsMainCharacterVisible() {
 	Params.AddIgnoredActor(this);
 	Params.AddIgnoredActor(MainCharacter);
 	
-	GetWorld()->LineTraceSingleByChannel(HitResult, StartLoc, EndLoc, ECC_Visibility, Params);
+	GetWorld()->LineTraceSingleByChannel(HitResult, StartLoc, EndLoc, CollisionChannel, Params);
 
 	return !HitResult.bBlockingHit;
 	
