@@ -34,6 +34,7 @@ void ABasicTesla::BeginPlay()
 	TraceShape = FCollisionShape::MakeSphere(BeamThicknessRadius);
 	FTimerHandle ToggleTimerHandle;
 	GetWorld()->GetTimerManager().SetTimer(ToggleTimerHandle, this, &ABasicTesla::ToggleTesla, ToggleInterval, true);
+	
 
 	
 }
