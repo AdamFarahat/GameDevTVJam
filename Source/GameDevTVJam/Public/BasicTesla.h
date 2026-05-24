@@ -26,7 +26,9 @@ public:
 	UPROPERTY(EditAnywhere)
 	float BeamThicknessRadius = 20.0f;
 	UPROPERTY(EditAnywhere)
-	float ToggleInterval = 2.0f;
+	float ToggleONInterval = 2.0f;
+	UPROPERTY(EditAnywhere)
+	float ToggleOFFInterval = 4.0f;
 	UPROPERTY(EditAnywhere)
 	class UNiagaraSystem* TeslaBeam;
 	UPROPERTY(EditAnywhere)
@@ -61,11 +63,13 @@ public:
 	};
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USceneComponent* Root;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool bIsActive = false;
 private:
 	FCollisionShape TraceShape;
 	ETeslaPoleState CurrentPoleStateRight = ETeslaPoleState::TowardsInitial;
 	ETeslaPoleState CurrentPoleStateLeft = ETeslaPoleState::TowardsInitial;
-	bool bIsActive = false;
 	class UNiagaraComponent* BeamNiagaraComponent;
 	void UpdatePole(UStaticMeshComponent* Pole, const FVector& InitialLocation
 		, const FVector& FinalLocation, float DeltaTime, ETeslaPoleState& PoleState);

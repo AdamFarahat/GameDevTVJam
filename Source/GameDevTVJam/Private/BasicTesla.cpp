@@ -33,7 +33,7 @@ void ABasicTesla::BeginPlay()
 	
 	TraceShape = FCollisionShape::MakeSphere(BeamThicknessRadius);
 	FTimerHandle ToggleTimerHandle;
-	GetWorld()->GetTimerManager().SetTimer(ToggleTimerHandle, this, &ABasicTesla::ToggleTesla, ToggleInterval, true);
+	GetWorld()->GetTimerManager().SetTimer(ToggleTimerHandle, this, &ABasicTesla::ToggleTesla, ToggleOFFInterval, false);
 	
 
 	
@@ -78,10 +78,17 @@ bool ABasicTesla::IsShockingPlayer(AActor*& OutTargetActor) {
 	}
 	return false;
 }
+
+/*
+* Toggles the Tesla on and off, spawning and destroying the beam Niagara component accordingly, and setting timers for the next toggle.
+* When this function is called, it also continously fires a timer recursively to toggle the Tesla on and off at the specified intervals.
+*/
 void ABasicTesla::ToggleTesla()
 {
 	bIsActive = !bIsActive;
 
+
+	FTimerHandle ToggleTimerHandle;
 	if (bIsActive) {
 		BeamNiagaraComponent = UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), TeslaBeam
 			, RightPole->GetComponentLocation(), FRotator::ZeroRotator);
@@ -89,12 +96,14 @@ void ABasicTesla::ToggleTesla()
 			BeamNiagaraComponent->SetVectorParameter(BeamEndParameterName, LeftPole->GetComponentLocation());
 			BeamNiagaraComponent->AttachToComponent(RightPole, FAttachmentTransformRules::KeepWorldTransform);
 		}
+		GetWorld()->GetTimerManager().SetTimer(ToggleTimerHandle, this, &ABasicTesla::ToggleTesla, ToggleONInterval, false);
 	}
 	else {
 		if (BeamNiagaraComponent) {
 			BeamNiagaraComponent->DestroyComponent();
 			BeamNiagaraComponent = nullptr;
 		}
+		GetWorld()->GetTimerManager().SetTimer(ToggleTimerHandle, this, &ABasicTesla::ToggleTesla, ToggleOFFInterval, false);
 	}
 }
 
