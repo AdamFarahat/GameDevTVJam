@@ -70,12 +70,11 @@ void ATurret::ScanArea() {
 			ScanRotationSpeed
 		);
 
-	TurretMesh->SetRelativeRotation(InterpolatedRotation);
+	TurretMesh->AddRelativeRotation(InterpolatedRotation - TurretMesh->GetRelativeRotation());
 
 	// Compare against the interpolated rotation rather than GetRelativeRotation() 
 	// to avoid issues with Unreal's internal rotator normalization (e.g., converting 270 to -90)
 	if (InterpolatedRotation.Equals(ScanRotations[CurrentScanIndex], ScanErrorTolerance)) {
-		UE_LOG(LogTemp, Display, TEXT("rotating to %d"), CurrentScanIndex);
 		CurrentScanIndex = (CurrentScanIndex + 1) % ScanRotations.Num();
 	}
 }
@@ -93,12 +92,13 @@ bool ATurret::IsMainCharacterVisible() {
 
 	
 	FHitResult HitResult;
-	FVector StartLoc = TurretMesh->GetComponentLocation();
+	FVector StartLoc = GetActorLocation();
 	FVector EndLoc = MainCharacter->GetActorLocation();
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(this);
 	Params.AddIgnoredActor(MainCharacter);
-	GetWorld()->LineTraceSingleByChannel(HitResult, StartLoc, EndLoc, ECC_Visibility, Params);
+	
+	GetWorld()->LineTraceSingleByChannel(HitResult, StartLoc, EndLoc, CollisionChannel, Params);
 
 	return !HitResult.bBlockingHit;
 	
@@ -113,24 +113,23 @@ void ATurret::CheckFireCondition()
 }
 void ATurret::RotateTurret(FVector LookAtTarget)
 {
-	FVector VectorToTarget = LookAtTarget - TurretMesh->GetComponentLocation();
+	FVector VectorToTarget = LookAtTarget - GetActorLocation();
 	FRotator LookAtRotation = FRotator(VectorToTarget.Rotation().Pitch, VectorToTarget.Rotation().Yaw, 0.0f);
-	FRotator InterpolatedRotation = FMath::RInterpTo(TurretMesh->GetComponentRotation()
+	FRotator InterpolatedRotation = FMath::RInterpTo(GetActorRotation()
 		, LookAtRotation
 		, GetWorld()->GetDeltaSeconds()
 		, TurretRotationSpeed
 	);
 
-	TurretMesh->SetWorldRotation(InterpolatedRotation);
+	SetActorRotation(InterpolatedRotation);
 }
 bool ATurret::InFireRange() {
-	return MainCharacter && (FVector::Distance(TurretMesh->GetComponentLocation(), MainCharacter->GetActorLocation()) <= ShootingRange);
+	return MainCharacter && (FVector::Distance(GetActorLocation(), MainCharacter->GetActorLocation()) <= ShootingRange);
 }
 void ATurret::Fire() {
 	FVector SpawnLoc = ProjectileStartingPoint->GetComponentLocation();
 	FRotator SpawnRot = ProjectileStartingPoint->GetComponentRotation();
 	if (AProjectile* Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, SpawnLoc, SpawnRot)) {
-		UE_LOG(LogTemp, Display, TEXT("Spawned Projectile"));
 		Projectile->SetOwner(this);
 	}
 }
