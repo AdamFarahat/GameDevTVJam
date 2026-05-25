@@ -28,6 +28,94 @@
 						<ActiveSource Name="Puzzle_Solved" ID="{03B00259-82B7-4AD3-A17B-76C66927AAE2}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="button hover sound" ID="{D7F7F863-C595-4788-900B-861249798D30}" ShortID="802547188">
+					<PropertyList>
+						<Property Name="IsVoice" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B416D1F7-7062-48DD-94A2-46FD50A61FD1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX_Audio_Bus" ID="{171FBE69-78E5-407B-B4AB-74CCA69B2C8D}" WorkUnitID="{B4F1D789-00C3-4F62-AD94-FB497234C160}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="button hover sound" ID="{31AF6E9B-3F3C-4660-BCB4-A4FA6CD8BF49}">
+							<Language>English(US)</Language>
+							<AudioFile>button hover sound.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="990279914"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="button hover sound" ID="{31AF6E9B-3F3C-4660-BCB4-A4FA6CD8BF49}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Button Execution sound" ID="{5BA5BDD9-DCDF-4152-B76C-2D3856979F62}" ShortID="310481422">
+					<PropertyList>
+						<Property Name="IsVoice" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B416D1F7-7062-48DD-94A2-46FD50A61FD1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX_Audio_Bus" ID="{171FBE69-78E5-407B-B4AB-74CCA69B2C8D}" WorkUnitID="{B4F1D789-00C3-4F62-AD94-FB497234C160}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Button Execution sound" ID="{1EC70D95-A8C6-4112-B303-C55CE7089AAC}">
+							<Language>English(US)</Language>
+							<AudioFile>Button Execution sound.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="644324691"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Button Execution sound" ID="{1EC70D95-A8C6-4112-B303-C55CE7089AAC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Folder Name="Music" ID="{7E8761D8-3601-4F21-8E8A-E088235CEBC1}" ShortID="1010938612">
+					<ChildrenList>
+						<Sound Name="Morning after show 27 th may" ID="{81FB666E-0B79-439D-987E-FF5F91923A7A}" ShortID="188443017">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsVoice" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B416D1F7-7062-48DD-94A2-46FD50A61FD1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music_Audio_Bus" ID="{A9009F3C-E052-4520-9DF7-29D89BED6814}" WorkUnitID="{B4F1D789-00C3-4F62-AD94-FB497234C160}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Morning after show 27 th may" ID="{86662B1F-703A-46F2-9302-DA23E8BB071A}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.31587"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.42113"/>
+										<Property Name="LoopBegin" Type="Real64" Value="1.84244"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.68451"/>
+										<Property Name="TrimEnd" Type="Real64" Value="45.53694"/>
+									</PropertyList>
+									<Language>English(US)</Language>
+									<AudioFile>Morning after show 27 th may.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="302087734"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Morning after show 27 th may" ID="{86662B1F-703A-46F2-9302-DA23E8BB071A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>

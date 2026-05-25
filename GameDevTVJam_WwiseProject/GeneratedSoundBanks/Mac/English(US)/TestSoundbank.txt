@@ -1,6 +1,12 @@
 Event	ID	Name			Wwise Object Path	Notes
+	513455580	ButtonOnHoverEvent			\Default Work Unit\ButtonOnHoverEvent	
 	1097980931	TestEvent			\Default Work Unit\TestEvent	
+	1236694768	MainMenuMusicEvent			\Default Work Unit\MainMenuMusicEvent	
+	1406980521	ButtonClickEvent			\Default Work Unit\ButtonClickEvent	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	302087734	Morning after show 27 th may	.cache\3D\{3DA45CBC-0A6A-4679-DC34-C7196E2D0377}.wem		\Containers\Default Work Unit\Music\Morning after show 27 th may		7735712
 	419507423	Puzzle_Solved	.cache\BC\{BCC5F6D9-D64A-C397-D758-3E6EF5B41DCB}.wem		\Containers\Default Work Unit\Puzzle_Solved		2117728
+	644324691	Button Execution sound	.cache\D2\{D2B86301-F847-90E3-52CA-B791597E628A}.wem		\Containers\Default Work Unit\Button Execution sound		20812
+	990279914	button hover sound	.cache\74\{747939B0-18D8-CE62-2705-690FCE62CCBF}.wem		\Containers\Default Work Unit\button hover sound		384096
 

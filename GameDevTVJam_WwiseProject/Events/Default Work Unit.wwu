@@ -14,6 +14,39 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="ButtonOnHoverEvent" ID="{3C5244A7-ECD1-4724-AB7A-84C6343BA03E}">
+					<ChildrenList>
+						<Action Name="" ID="{D8F3226B-E060-4E3D-A4C5-F876C3CDE90D}" ShortID="582677987">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="button hover sound" ID="{D7F7F863-C595-4788-900B-861249798D30}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ButtonClickEvent" ID="{A6EEED60-2608-44FF-BA3B-29E68729C8CA}">
+					<ChildrenList>
+						<Action Name="" ID="{15B758B9-4687-43DC-9302-69375318532A}" ShortID="377066234">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Button Execution sound" ID="{5BA5BDD9-DCDF-4152-B76C-2D3856979F62}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MainMenuMusicEvent" ID="{0014D07C-C694-44FA-ACD7-E2CA0818C82D}">
+					<ChildrenList>
+						<Action Name="" ID="{A4E5AC02-B9F1-4D09-8EB0-52862BE235BA}" ShortID="59225876">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Morning after show 27 th may" ID="{81FB666E-0B79-439D-987E-FF5F91923A7A}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
