@@ -36,6 +36,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="MainMenuMusicEvent" ID="{0014D07C-C694-44FA-ACD7-E2CA0818C82D}">
+					<ChildrenList>
+						<Action Name="" ID="{A4E5AC02-B9F1-4D09-8EB0-52862BE235BA}" ShortID="59225876">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Morning after show 27 th may" ID="{81FB666E-0B79-439D-987E-FF5F91923A7A}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
