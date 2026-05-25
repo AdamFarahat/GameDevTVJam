@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{F3638E98-DE6D-49D8-9FBB-7E4E201966C4}",
     "Language": "English(US)",
-    "Hash": "{B3AFAA2B-3D58-7CD0-EEB3-FCBEC4E0E5AD}",
+    "Hash": "{A9524333-2C49-0501-0313-4E77DD4DEED2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\TestSoundbank",
     "ShortName": "TestSoundbank",
     "Path": "English(US)/TestSoundbank.bnk",
     "Media": [
+     {
+      "Id": "302087734",
+      "Language": "English(US)",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Morning after show 27 th may.wav",
+      "CachePath": "3D/{3DA45CBC-0A6A-4679-DC34-C7196E2D0377}.wem"
+     },
      {
       "Id": "419507423",
       "Language": "English(US)",
@@ -70,6 +78,18 @@
       ]
      },
      {
+      "Id": "1236694768",
+      "Name": "MainMenuMusicEvent",
+      "ObjectPath": "\\Events\\Default Work Unit\\MainMenuMusicEvent",
+      "GUID": "{0014D07C-C694-44FA-ACD7-E2CA0818C82D}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "302087734"
+       }
+      ]
+     },
+     {
       "Id": "1097980931",
       "Name": "TestEvent",
       "ObjectPath": "\\Events\\Default Work Unit\\TestEvent",
@@ -86,6 +106,6 @@
     ]
    }
   ],
-  "FileHash": "{7626AAA0-4D10-8357-DCCB-3548B48B98EC}"
+  "FileHash": "{8939F219-332F-C9EE-BB6F-F920FFB8143F}"
  }
 }
