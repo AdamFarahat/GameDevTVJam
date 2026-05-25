@@ -6,8 +6,10 @@
 				<SoundBank Name="TestSoundbank" ID="{F3638E98-DE6D-49D8-9FBB-7E4E201966C4}">
 					<ObjectInclusionList>
 						<ObjectRef Name="TestEvent" ID="{4CCF26CA-52EC-424A-8CC5-EEFF5B1B0445}" WorkUnitID="{188C7E11-F55F-4C38-B280-92E29F55C182}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ButtonClickEvent" ID="{A6EEED60-2608-44FF-BA3B-29E68729C8CA}" WorkUnitID="{188C7E11-F55F-4C38-B280-92E29F55C182}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Default Work Unit" ID="{394B2704-9D1E-4593-B799-65F275B6171E}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Puzzle_Solved" ID="{EB0B83A0-2E6D-4BBE-8769-727638464F5E}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Default Work Unit" ID="{188C7E11-F55F-4C38-B280-92E29F55C182}" WorkUnitID="{188C7E11-F55F-4C38-B280-92E29F55C182}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
