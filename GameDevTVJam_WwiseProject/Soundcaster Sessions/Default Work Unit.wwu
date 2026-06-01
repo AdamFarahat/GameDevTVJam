@@ -6,8 +6,20 @@
 				<SoundcasterSession Name="Test Session" ID="{EFC13FD5-B486-4C21-B3B3-C5946C97B399}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="TestEvent" ID="{4CCF26CA-52EC-424A-8CC5-EEFF5B1B0445}" WorkUnitID="{188C7E11-F55F-4C38-B280-92E29F55C182}"/>
-							<Position X="0" Y="0"/>
+							<ObjectRef Name="PlayLevelMusicEvent" ID="{13321A6B-AFF9-456B-9F12-2BA4B5D6C72D}" WorkUnitID="{188C7E11-F55F-4C38-B280-92E29F55C182}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StopLevelMusic" ID="{0D32C8E5-1651-4C31-86A6-685A051127E4}" WorkUnitID="{188C7E11-F55F-4C38-B280-92E29F55C182}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="DrawingSound" ID="{863801A9-F6CA-4846-81E0-BECB4E3BCE4F}" WorkUnitID="{188C7E11-F55F-4C38-B280-92E29F55C182}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MovementSound" ID="{47C39C4A-0F2E-461D-BF4D-750E8794D7FF}" WorkUnitID="{188C7E11-F55F-4C38-B280-92E29F55C182}"/>
+							<Position X="4" Y="0"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>

@@ -10,11 +10,35 @@
     "Type": "User",
     "GUID": "{F3638E98-DE6D-49D8-9FBB-7E4E201966C4}",
     "Language": "English(US)",
-    "Hash": "{A9524333-2C49-0501-0313-4E77DD4DEED2}",
+    "Hash": "{60E52D25-224C-3230-8424-F71CBCAEBC99}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\TestSoundbank",
     "ShortName": "TestSoundbank",
     "Path": "English(US)/TestSoundbank.bnk",
     "Media": [
+     {
+      "Id": "93951049",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rock Sliding.wav",
+      "CachePath": "65/{65827B80-51A8-1368-9110-EA11DBEB0658}.wem"
+     },
+     {
+      "Id": "284549926",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Node Hovering Hum.wav",
+      "CachePath": "A7/{A7A5782F-C9E0-6A51-8550-327F114FD8EB}.wem"
+     },
+     {
+      "Id": "295243203",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SPOILER_caliss (1).wav",
+      "CachePath": "C4/{C4E74652-A690-5F6A-551E-E215097E5FE6}.wem"
+     },
      {
       "Id": "302087734",
       "Language": "English(US)",
@@ -24,12 +48,52 @@
       "CachePath": "3D/{3DA45CBC-0A6A-4679-DC34-C7196E2D0377}.wem"
      },
      {
-      "Id": "419507423",
-      "Language": "English(US)",
+      "Id": "355740718",
+      "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Puzzle_Solved.wav",
-      "CachePath": "BC/{BCC5F6D9-D64A-C397-D758-3E6EF5B41DCB}.wem"
+      "ShortName": "Bubble Spawn sound.wav",
+      "CachePath": "28/{2893C345-5E64-1A60-B175-6AC3AE20DB3D}.wem"
+     },
+     {
+      "Id": "391262556",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Low Energy Sound.wav",
+      "CachePath": "CA/{CACD0AD6-6AFA-E0D5-EB45-A8F6FCB852A1}.wem"
+     },
+     {
+      "Id": "437455328",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mine alerted.wav",
+      "CachePath": "DD/{DDDB20AB-F966-52A1-9B9D-F586A26C8E26}.wem"
+     },
+     {
+      "Id": "457726362",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bubble POP sound.wav",
+      "CachePath": "B2/{B23014C3-E760-3E88-94BD-CD6DF06BAB2C}.wem"
+     },
+     {
+      "Id": "498258683",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "bubble mouvement.wav",
+      "CachePath": "49/{49C72F20-4444-2A75-7D3C-9E2BA7300E56}.wem"
+     },
+     {
+      "Id": "612174407",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rock Impact.wav",
+      "CachePath": "B5/{B53F922A-C846-D8A2-11C0-483AB56506AA}.wem"
      },
      {
       "Id": "644324691",
@@ -40,19 +104,119 @@
       "CachePath": "D2/{D2B86301-F847-90E3-52CA-B791597E628A}.wem"
      },
      {
+      "Id": "674116963",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "olenchic-electric-155027.wav",
+      "CachePath": "52/{52E9871C-F28D-E338-FDD1-A1CB5A35156C}.wem"
+     },
+     {
+      "Id": "702814414",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "floraphonic-steel-blade-slice-2-188214.wav",
+      "CachePath": "89/{89D5995F-74C9-71CF-B7D4-E6AF2E1A79F8}.wem"
+     },
+     {
+      "Id": "707746923",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "universfield-epic-cinematic-explosion-454857.wav",
+      "CachePath": "48/{48C93AB6-CC96-8A21-4585-A7D5F168E2E3}.wem"
+     },
+     {
+      "Id": "731653603",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Drawing Sounds.wav",
+      "CachePath": "9A/{9A9DF921-450F-E52B-87D0-5753F5C58808}.wem"
+     },
+     {
+      "Id": "831239119",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "game over jingle.wav",
+      "CachePath": "52/{52866629-0837-358C-3E74-8027334D0563}.wem"
+     },
+     {
+      "Id": "937065928",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Win Jingle.wav",
+      "CachePath": "04/{04B580EE-71B8-9CFA-496E-D57F989668E3}.wem"
+     },
+     {
+      "Id": "939338232",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Collect energy.wav",
+      "CachePath": "3E/{3EC1BC58-DFF1-5D9F-BE04-403E813C22C6}.wem"
+     },
+     {
       "Id": "990279914",
       "Language": "English(US)",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "button hover sound.wav",
       "CachePath": "74/{747939B0-18D8-CE62-2705-690FCE62CCBF}.wem"
+     },
+     {
+      "Id": "1042130684",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "dragon-studio-electric-discharge-386160.wav",
+      "CachePath": "00/{002D3688-3348-3EC9-194C-5EBF2CCA34E7}.wem"
+     },
+     {
+      "Id": "1061067890",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "caliss_6 (1).wav",
+      "CachePath": "1B/{1BE0C2A9-34DD-7114-A83B-587A676C80EB}.wem"
      }
     ],
     "Events": [
      {
+      "Id": "3000457456",
+      "Name": "BubblePop",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\BubblePop",
+      "GUID": "{DD85AAA0-F70B-40E8-A1C1-0074226C3558}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.76",
+      "DurationMax": "1.76",
+      "MediaRefs": [
+       {
+        "Id": "457726362"
+       }
+      ]
+     },
+     {
+      "Id": "3099025672",
+      "Name": "BubbleSpawn",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\BubbleSpawn",
+      "GUID": "{08CE9201-7A3F-49F3-8341-3B07D0DCC793}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.9820833",
+      "DurationMax": "1.9820833",
+      "MediaRefs": [
+       {
+        "Id": "355740718"
+       }
+      ]
+     },
+     {
       "Id": "1406980521",
       "Name": "ButtonClickEvent",
-      "ObjectPath": "\\Events\\Default Work Unit\\ButtonClickEvent",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\ButtonClickEvent",
       "GUID": "{A6EEED60-2608-44FF-BA3B-29E68729C8CA}",
       "DurationType": "OneShot",
       "DurationMin": "0.107895836",
@@ -66,7 +230,7 @@
      {
       "Id": "513455580",
       "Name": "ButtonOnHoverEvent",
-      "ObjectPath": "\\Events\\Default Work Unit\\ButtonOnHoverEvent",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\ButtonOnHoverEvent",
       "GUID": "{3C5244A7-ECD1-4724-AB7A-84C6343BA03E}",
       "DurationType": "OneShot",
       "DurationMin": "2",
@@ -78,9 +242,86 @@
       ]
      },
      {
+      "Id": "794354902",
+      "Name": "DrawingSound",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\DrawingSound",
+      "GUID": "{863801A9-F6CA-4846-81E0-BECB4E3BCE4F}",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "655658861",
+         "Id": "629708439",
+         "GUID": "{F2770C2F-E8C6-4C13-92F2-CB3B4E6E5C44}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "731653603"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "655658861",
+         "Id": "629708439",
+         "GUID": "{F2770C2F-E8C6-4C13-92F2-CB3B4E6E5C44}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "731653603"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "3416954922",
+      "Name": "ElectricImpact",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\ElectricImpact",
+      "GUID": "{EEFC39F5-3C02-4135-9B25-D8B822DA6304}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.8979292",
+      "DurationMax": "0.8979292",
+      "MediaRefs": [
+       {
+        "Id": "1042130684"
+       }
+      ]
+     },
+     {
+      "Id": "1448158269",
+      "Name": "EnergyCollect",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\EnergyCollect",
+      "GUID": "{31E5704D-0EC9-4845-BFD5-49DC9FE9A38B}",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "939338232"
+       }
+      ]
+     },
+     {
+      "Id": "1772229705",
+      "Name": "LowEnergy",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\LowEnergy",
+      "GUID": "{0380A087-635D-4DDC-9A5B-EEB678554494}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.026875",
+      "DurationMax": "2.026875",
+      "MediaRefs": [
+       {
+        "Id": "391262556"
+       }
+      ]
+     },
+     {
       "Id": "1236694768",
       "Name": "MainMenuMusicEvent",
-      "ObjectPath": "\\Events\\Default Work Unit\\MainMenuMusicEvent",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\MainMenuMusicEvent",
       "GUID": "{0014D07C-C694-44FA-ACD7-E2CA0818C82D}",
       "DurationType": "Infinite",
       "MediaRefs": [
@@ -90,22 +331,493 @@
       ]
      },
      {
-      "Id": "1097980931",
-      "Name": "TestEvent",
-      "ObjectPath": "\\Events\\Default Work Unit\\TestEvent",
-      "GUID": "{4CCF26CA-52EC-424A-8CC5-EEFF5B1B0445}",
+      "Id": "2114819398",
+      "Name": "MineAlert",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\MineAlert",
+      "GUID": "{2533020D-04E3-40FA-ACEF-3DD2E4E74A46}",
       "DurationType": "OneShot",
-      "DurationMin": "11.029333",
-      "DurationMax": "11.029333",
+      "DurationMin": "2.026875",
+      "DurationMax": "2.026875",
       "MediaRefs": [
        {
-        "Id": "419507423"
+        "Id": "437455328"
+       }
+      ]
+     },
+     {
+      "Id": "3009491347",
+      "Name": "MineExplode",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\MineExplode",
+      "GUID": "{1570A2ED-A5BB-4BF3-8E7D-32733B2A2E83}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.9779592",
+      "DurationMax": "2.9779592",
+      "MediaRefs": [
+       {
+        "Id": "707746923"
+       }
+      ]
+     },
+     {
+      "Id": "3223270983",
+      "Name": "MovementSound",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\MovementSound",
+      "GUID": "{47C39C4A-0F2E-461D-BF4D-750E8794D7FF}",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "881871422",
+         "Id": "2578698925",
+         "GUID": "{714B6395-DE00-4D4A-AFE6-A6298B8A9A98}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "498258683"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "881871422",
+         "Id": "2578698925",
+         "GUID": "{714B6395-DE00-4D4A-AFE6-A6298B8A9A98}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "498258683"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "170346575",
+      "Name": "NodeHumStart",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NodeHumStart",
+      "GUID": "{5FD26FCC-3D22-407B-91A4-1E41D4D74390}",
+      "MaxAttenuation": "300",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "284549926"
+       }
+      ]
+     },
+     {
+      "Id": "2895517991",
+      "Name": "PlayGameOver",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\PlayGameOver",
+      "GUID": "{6499A99E-B1AE-4AB0-B659-336BAA8C22E0}",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "831239119"
+       }
+      ]
+     },
+     {
+      "Id": "2454956916",
+      "Name": "PlayLevelMusicEvent",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\PlayLevelMusicEvent",
+      "GUID": "{13321A6B-AFF9-456B-9F12-2BA4B5D6C72D}",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2173927252",
+         "Id": "4030710154",
+         "GUID": "{20B0E82E-CC63-4015-9309-6B53DEAC0CD5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1061067890"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2173927252",
+         "Id": "3840192365",
+         "GUID": "{DAD2A232-25CB-411A-BF74-F944FA8F41FE}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "295243203"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2173927252",
+         "Id": "4030710154",
+         "GUID": "{20B0E82E-CC63-4015-9309-6B53DEAC0CD5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1061067890"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2173927252",
+         "Id": "3840192365",
+         "GUID": "{DAD2A232-25CB-411A-BF74-F944FA8F41FE}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "295243203"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "1973797163",
+      "Name": "PlayWin",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\PlayWin",
+      "GUID": "{B6FCBA81-4E1F-482D-B978-F0CEF0697C03}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.625",
+      "DurationMax": "1.625",
+      "MediaRefs": [
+       {
+        "Id": "937065928"
+       }
+      ]
+     },
+     {
+      "Id": "528151708",
+      "Name": "RockImpact",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\RockImpact",
+      "GUID": "{4F941490-CE35-43D7-BE84-686E518B14DD}",
+      "MaxAttenuation": "300",
+      "DurationType": "OneShot",
+      "DurationMin": "2.8389795",
+      "DurationMax": "2.8389795",
+      "MediaRefs": [
+       {
+        "Id": "612174407"
+       }
+      ]
+     },
+     {
+      "Id": "937677513",
+      "Name": "RockMover",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\RockMover",
+      "GUID": "{CB5D762A-0657-43A7-9DE1-F2C3C9D6309E}",
+      "MaxAttenuation": "600",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "93951049"
+       }
+      ]
+     },
+     {
+      "Id": "4053722055",
+      "Name": "SetDrawing",
+      "ObjectPath": "\\Events\\Default Work Unit\\States\\SetDrawing",
+      "GUID": "{49E5076F-840E-47D7-955E-8D4F2003FC48}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "655658861",
+        "Id": "629708439",
+        "Name": "AmDrawing",
+        "ObjectPath": "\\States\\Default Work Unit\\DrawingBool\\AmDrawing",
+        "GUID": "{F2770C2F-E8C6-4C13-92F2-CB3B4E6E5C44}"
+       }
+      ]
+     },
+     {
+      "Id": "1053564957",
+      "Name": "SetMoving",
+      "ObjectPath": "\\Events\\Default Work Unit\\States\\SetMoving",
+      "GUID": "{714C87CD-015B-4A0B-87AE-FFA1E1DDAA5B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "881871422",
+        "Id": "2578698925",
+        "Name": "AmMoving",
+        "ObjectPath": "\\States\\Default Work Unit\\MovementBool\\AmMoving",
+        "GUID": "{714B6395-DE00-4D4A-AFE6-A6298B8A9A98}"
+       }
+      ]
+     },
+     {
+      "Id": "1425176460",
+      "Name": "SetNotDrawing",
+      "ObjectPath": "\\Events\\Default Work Unit\\States\\SetNotDrawing",
+      "GUID": "{184321C6-9A9F-45DB-B641-ACCEE127EB33}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "655658861",
+        "Id": "2354748124",
+        "Name": "AmNotDrawing",
+        "ObjectPath": "\\States\\Default Work Unit\\DrawingBool\\AmNotDrawing",
+        "GUID": "{E7604A74-C617-4B69-A298-45A3E580C072}"
+       }
+      ]
+     },
+     {
+      "Id": "1862074640",
+      "Name": "SetNotMoving",
+      "ObjectPath": "\\Events\\Default Work Unit\\States\\SetNotMoving",
+      "GUID": "{155524CF-667B-41D5-9544-FEDDCCEB6E66}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "881871422",
+        "Id": "4090208096",
+        "Name": "AmNotMoving",
+        "ObjectPath": "\\States\\Default Work Unit\\MovementBool\\AmNotMoving",
+        "GUID": "{52B91C74-9D2E-449D-ACBE-7D9B19542716}"
+       }
+      ]
+     },
+     {
+      "Id": "2813983028",
+      "Name": "SetPlanningEvent",
+      "ObjectPath": "\\Events\\Default Work Unit\\States\\SetPlanningEvent",
+      "GUID": "{762C8121-7753-4F2B-AC58-27A4BD9461F3}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "2173927252",
+        "Id": "4030710154",
+        "Name": "Planning",
+        "ObjectPath": "\\States\\Default Work Unit\\LevelMusicStates\\Planning",
+        "GUID": "{20B0E82E-CC63-4015-9309-6B53DEAC0CD5}"
+       }
+      ]
+     },
+     {
+      "Id": "2423205157",
+      "Name": "SetStressEvent",
+      "ObjectPath": "\\Events\\Default Work Unit\\States\\SetStressEvent",
+      "GUID": "{2320FE09-B29F-49E2-864B-D50E83F471A0}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "2173927252",
+        "Id": "3840192365",
+        "Name": "Stress",
+        "ObjectPath": "\\States\\Default Work Unit\\LevelMusicStates\\Stress",
+        "GUID": "{DAD2A232-25CB-411A-BF74-F944FA8F41FE}"
+       }
+      ]
+     },
+     {
+      "Id": "1724224948",
+      "Name": "SteelImpact",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\SteelImpact",
+      "GUID": "{C7121C47-05AD-48BE-ACD8-DA9F98B7FA15}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.75",
+      "DurationMax": "0.75",
+      "MediaRefs": [
+       {
+        "Id": "702814414"
+       }
+      ]
+     },
+     {
+      "Id": "1307992046",
+      "Name": "StopLevelMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\StopLevelMusic",
+      "GUID": "{0D32C8E5-1651-4C31-86A6-685A051127E4}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2173927252",
+         "Id": "4030710154",
+         "GUID": "{20B0E82E-CC63-4015-9309-6B53DEAC0CD5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1061067890"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2173927252",
+         "Id": "3840192365",
+         "GUID": "{DAD2A232-25CB-411A-BF74-F944FA8F41FE}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "295243203"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "Id": "3189472150",
+      "Name": "StopSFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\StopSFX",
+      "GUID": "{2DC07BA7-6158-4579-97F5-4BCC51EB0C5C}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "655658861",
+         "Id": "629708439",
+         "GUID": "{F2770C2F-E8C6-4C13-92F2-CB3B4E6E5C44}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "731653603"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "881871422",
+         "Id": "2578698925",
+         "GUID": "{714B6395-DE00-4D4A-AFE6-A6298B8A9A98}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "498258683"
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2292736783",
+      "Name": "DeathVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\DeathVolume",
+      "GUID": "{950FCE48-113A-47DF-B22C-94D82FF75524}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "655658861",
+      "Name": "DrawingBool",
+      "ObjectPath": "\\States\\Default Work Unit\\DrawingBool",
+      "GUID": "{D48FD331-8992-40AB-BF31-ADDB11BFFCFC}",
+      "States": [
+       {
+        "Id": "629708439",
+        "Name": "AmDrawing",
+        "ObjectPath": "\\States\\Default Work Unit\\DrawingBool\\AmDrawing",
+        "GUID": "{F2770C2F-E8C6-4C13-92F2-CB3B4E6E5C44}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\DrawingBool\\None",
+        "GUID": "{0D4F8DED-CCB2-4051-AF7F-2122BC86FDBF}"
+       },
+       {
+        "Id": "2354748124",
+        "Name": "AmNotDrawing",
+        "ObjectPath": "\\States\\Default Work Unit\\DrawingBool\\AmNotDrawing",
+        "GUID": "{E7604A74-C617-4B69-A298-45A3E580C072}"
+       }
+      ]
+     },
+     {
+      "Id": "881871422",
+      "Name": "MovementBool",
+      "ObjectPath": "\\States\\Default Work Unit\\MovementBool",
+      "GUID": "{A18A8F79-C303-45EE-BE57-9232C6F65E32}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\MovementBool\\None",
+        "GUID": "{2517E6ED-386E-423E-ABE3-C935353EC4FF}"
+       },
+       {
+        "Id": "2578698925",
+        "Name": "AmMoving",
+        "ObjectPath": "\\States\\Default Work Unit\\MovementBool\\AmMoving",
+        "GUID": "{714B6395-DE00-4D4A-AFE6-A6298B8A9A98}"
+       },
+       {
+        "Id": "4090208096",
+        "Name": "AmNotMoving",
+        "ObjectPath": "\\States\\Default Work Unit\\MovementBool\\AmNotMoving",
+        "GUID": "{52B91C74-9D2E-449D-ACBE-7D9B19542716}"
+       }
+      ]
+     },
+     {
+      "Id": "2173927252",
+      "Name": "LevelMusicStates",
+      "ObjectPath": "\\States\\Default Work Unit\\LevelMusicStates",
+      "GUID": "{0B6942E0-C97D-4FD2-A2F6-BCD7F7C791DB}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\LevelMusicStates\\None",
+        "GUID": "{D5C253CF-40A3-4CB1-929C-4E27C363154E}"
+       },
+       {
+        "Id": "3840192365",
+        "Name": "Stress",
+        "ObjectPath": "\\States\\Default Work Unit\\LevelMusicStates\\Stress",
+        "GUID": "{DAD2A232-25CB-411A-BF74-F944FA8F41FE}"
+       },
+       {
+        "Id": "4030710154",
+        "Name": "Planning",
+        "ObjectPath": "\\States\\Default Work Unit\\LevelMusicStates\\Planning",
+        "GUID": "{20B0E82E-CC63-4015-9309-6B53DEAC0CD5}"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{A7C7F530-E1AB-FA3E-A898-792D0FB26EF6}"
+  "FileHash": "{9551D4CE-C400-B3B9-9AFB-ED907230DAA1}"
  }
 }

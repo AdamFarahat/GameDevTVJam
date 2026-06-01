@@ -1,3 +1,19 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	655658861	DrawingBool			\Default Work Unit\DrawingBool	
+	881871422	MovementBool			\Default Work Unit\MovementBool	
+	2173927252	LevelMusicStates			\Default Work Unit\LevelMusicStates	
+
+State	ID	Name	State Group			Notes
+	629708439	AmDrawing	DrawingBool			
+	748895195	None	DrawingBool			
+	2354748124	AmNotDrawing	DrawingBool			
+	748895195	None	MovementBool			
+	2578698925	AmMoving	MovementBool			
+	4090208096	AmNotMoving	MovementBool			
+	748895195	None	LevelMusicStates			
+	3840192365	Stress	LevelMusicStates			
+	4030710154	Planning	LevelMusicStates			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	1006694123	Music_Volume			\Default Work Unit\Music_Volume	
 	1564184899	SFX_Volume			\Default Work Unit\SFX_Volume	
@@ -5,6 +21,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
+	2476705220	Jingle Bus			\Default Work Unit\Main Audio Bus\Jingle Bus	
 	3365874942	SFX_Audio_Bus			\Default Work Unit\Main Audio Bus\SFX_Audio_Bus	
 	3675531030	Music_Audio_Bus			\Default Work Unit\Main Audio Bus\Music_Audio_Bus	
 

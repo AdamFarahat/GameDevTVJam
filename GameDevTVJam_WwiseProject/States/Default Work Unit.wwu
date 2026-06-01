@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{FD8E3708-8862-45D9-9AE7-53DB2B3B122D}" SchemaVersion="133">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{FD8E3708-8862-45D9-9AE7-53DB2B3B122D}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{FD8E3708-8862-45D9-9AE7-53DB2B3B122D}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="LevelMusicStates" ID="{0B6942E0-C97D-4FD2-A2F6-BCD7F7C791DB}">
+					<ChildrenList>
+						<State Name="None" ID="{D5C253CF-40A3-4CB1-929C-4E27C363154E}"/>
+						<State Name="Planning" ID="{20B0E82E-CC63-4015-9309-6B53DEAC0CD5}"/>
+						<State Name="Stress" ID="{DAD2A232-25CB-411A-BF74-F944FA8F41FE}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="DrawingBool" ID="{D48FD331-8992-40AB-BF31-ADDB11BFFCFC}">
+					<ChildrenList>
+						<State Name="None" ID="{0D4F8DED-CCB2-4051-AF7F-2122BC86FDBF}"/>
+						<State Name="AmDrawing" ID="{F2770C2F-E8C6-4C13-92F2-CB3B4E6E5C44}"/>
+						<State Name="AmNotDrawing" ID="{E7604A74-C617-4B69-A298-45A3E580C072}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="MovementBool" ID="{A18A8F79-C303-45EE-BE57-9232C6F65E32}">
+					<ChildrenList>
+						<State Name="None" ID="{2517E6ED-386E-423E-ABE3-C935353EC4FF}"/>
+						<State Name="AmMoving" ID="{714B6395-DE00-4D4A-AFE6-A6298B8A9A98}"/>
+						<State Name="AmNotMoving" ID="{52B91C74-9D2E-449D-ACBE-7D9B19542716}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>
