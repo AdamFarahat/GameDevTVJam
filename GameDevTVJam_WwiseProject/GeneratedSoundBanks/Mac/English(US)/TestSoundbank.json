@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F3638E98-DE6D-49D8-9FBB-7E4E201966C4}",
     "Language": "English(US)",
-    "Hash": "{D897992B-8CCB-055D-4067-64F1C0BC926F}",
+    "Hash": "{60E52D25-224C-3230-8424-F71CBCAEBC99}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\TestSoundbank",
     "ShortName": "TestSoundbank",
     "Path": "English(US)/TestSoundbank.bnk",
@@ -818,6 +818,6 @@
     ]
    }
   ],
-  "FileHash": "{3577D8AF-100D-7AF0-579E-F4F1CB3FC098}"
+  "FileHash": "{9551D4CE-C400-B3B9-9AFB-ED907230DAA1}"
  }
 }
