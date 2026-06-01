@@ -6,7 +6,7 @@
 				<Attenuation Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" ShortID="698572816">
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
-							<CurveUsageInfo Platform="Linked" CurveToUse="None">
+							<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
 								<Curve Name="VolumeDry" ID="{EBA29F83-6A38-4DEB-B8AC-3AFC9B046FA3}">
 									<PropertyList>
 										<Property Name="Flags" Type="int32" Value="3"/>
@@ -16,6 +16,11 @@
 											<XPos>0</XPos>
 											<YPos>0</YPos>
 											<Flags>5</Flags>
+										</Point>
+										<Point>
+											<XPos>10</XPos>
+											<YPos>-200</YPos>
+											<Flags>0</Flags>
 										</Point>
 										<Point>
 											<XPos>100</XPos>

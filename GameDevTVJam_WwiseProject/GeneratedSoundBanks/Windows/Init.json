@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{02BED0B6-7EBF-ED87-0890-9AE8EFFD4A34}",
+    "Hash": "{F259904F-1EB9-D2F6-C730-9E48AA26431F}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -42,6 +42,12 @@
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      },
      {
+      "Id": "2476705220",
+      "Name": "Jingle Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Jingle Bus",
+      "GUID": "{87C54CC6-1A89-4BD9-ABF5-C07E4937F97A}"
+     },
+     {
       "Id": "3365874942",
       "Name": "SFX_Audio_Bus",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX_Audio_Bus",
@@ -68,14 +74,100 @@
       "GUID": "{8A5E7FF9-6C6C-4D4F-ACE3-3BB60C4A98B4}"
      },
      {
+      "Id": "2292736783",
+      "Name": "DeathVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\DeathVolume",
+      "GUID": "{950FCE48-113A-47DF-B22C-94D82FF75524}"
+     },
+     {
       "Id": "4179668880",
       "Name": "Master_Volume",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Master_Volume",
       "GUID": "{85E1C15C-8EFD-4771-944E-BE74CD9108CF}"
      }
+    ],
+    "StateGroups": [
+     {
+      "Id": "655658861",
+      "Name": "DrawingBool",
+      "ObjectPath": "\\States\\Default Work Unit\\DrawingBool",
+      "GUID": "{D48FD331-8992-40AB-BF31-ADDB11BFFCFC}",
+      "States": [
+       {
+        "Id": "629708439",
+        "Name": "AmDrawing",
+        "ObjectPath": "\\States\\Default Work Unit\\DrawingBool\\AmDrawing",
+        "GUID": "{F2770C2F-E8C6-4C13-92F2-CB3B4E6E5C44}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\DrawingBool\\None",
+        "GUID": "{0D4F8DED-CCB2-4051-AF7F-2122BC86FDBF}"
+       },
+       {
+        "Id": "2354748124",
+        "Name": "AmNotDrawing",
+        "ObjectPath": "\\States\\Default Work Unit\\DrawingBool\\AmNotDrawing",
+        "GUID": "{E7604A74-C617-4B69-A298-45A3E580C072}"
+       }
+      ]
+     },
+     {
+      "Id": "881871422",
+      "Name": "MovementBool",
+      "ObjectPath": "\\States\\Default Work Unit\\MovementBool",
+      "GUID": "{A18A8F79-C303-45EE-BE57-9232C6F65E32}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\MovementBool\\None",
+        "GUID": "{2517E6ED-386E-423E-ABE3-C935353EC4FF}"
+       },
+       {
+        "Id": "2578698925",
+        "Name": "AmMoving",
+        "ObjectPath": "\\States\\Default Work Unit\\MovementBool\\AmMoving",
+        "GUID": "{714B6395-DE00-4D4A-AFE6-A6298B8A9A98}"
+       },
+       {
+        "Id": "4090208096",
+        "Name": "AmNotMoving",
+        "ObjectPath": "\\States\\Default Work Unit\\MovementBool\\AmNotMoving",
+        "GUID": "{52B91C74-9D2E-449D-ACBE-7D9B19542716}"
+       }
+      ]
+     },
+     {
+      "Id": "2173927252",
+      "Name": "LevelMusicStates",
+      "ObjectPath": "\\States\\Default Work Unit\\LevelMusicStates",
+      "GUID": "{0B6942E0-C97D-4FD2-A2F6-BCD7F7C791DB}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\LevelMusicStates\\None",
+        "GUID": "{D5C253CF-40A3-4CB1-929C-4E27C363154E}"
+       },
+       {
+        "Id": "3840192365",
+        "Name": "Stress",
+        "ObjectPath": "\\States\\Default Work Unit\\LevelMusicStates\\Stress",
+        "GUID": "{DAD2A232-25CB-411A-BF74-F944FA8F41FE}"
+       },
+       {
+        "Id": "4030710154",
+        "Name": "Planning",
+        "ObjectPath": "\\States\\Default Work Unit\\LevelMusicStates\\Planning",
+        "GUID": "{20B0E82E-CC63-4015-9309-6B53DEAC0CD5}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{C286C39A-9F4F-5495-89D5-3809A1956E27}"
+  "FileHash": "{7F40DC76-6C76-F602-795C-4D5858DD7CE7}"
  }
 }

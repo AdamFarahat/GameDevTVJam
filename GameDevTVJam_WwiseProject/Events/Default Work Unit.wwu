@@ -3,50 +3,349 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{188C7E11-F55F-4C38-B280-92E29F55C182}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="TestEvent" ID="{4CCF26CA-52EC-424A-8CC5-EEFF5B1B0445}">
+				<Folder Name="SFX" ID="{FCD88904-7342-4023-A46B-CD7BA0A497A4}" ShortID="109584712">
 					<ChildrenList>
-						<Action Name="" ID="{10804E43-FFAD-4DD5-B88A-32B37F820333}" ShortID="226808580">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Puzzle_Solved" ID="{EB0B83A0-2E6D-4BBE-8769-727638464F5E}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="ButtonClickEvent" ID="{A6EEED60-2608-44FF-BA3B-29E68729C8CA}">
+							<ChildrenList>
+								<Action Name="" ID="{15B758B9-4687-43DC-9302-69375318532A}" ShortID="377066234">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Button Execution sound" ID="{5BA5BDD9-DCDF-4152-B76C-2D3856979F62}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ButtonOnHoverEvent" ID="{3C5244A7-ECD1-4724-AB7A-84C6343BA03E}">
+							<ChildrenList>
+								<Action Name="" ID="{D8F3226B-E060-4E3D-A4C5-F876C3CDE90D}" ShortID="582677987">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="button hover sound" ID="{D7F7F863-C595-4788-900B-861249798D30}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="DrawingSound" ID="{863801A9-F6CA-4846-81E0-BECB4E3BCE4F}">
+							<ChildrenList>
+								<Action Name="" ID="{0A77EA2D-6540-4AD2-8812-B78691773B13}" ShortID="972564569">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DrawingSound" ID="{C226F56A-994C-4A09-88BE-6E2FEAD01CA0}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="EnergyCollect" ID="{31E5704D-0EC9-4845-BFD5-49DC9FE9A38B}">
+							<ChildrenList>
+								<Action Name="" ID="{5A4F05EF-D148-4761-9BFB-743C85893C24}" ShortID="809103201">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Collect energy" ID="{3D7F32A7-37A8-4780-81A9-C719BFBDCBCD}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="BubblePop" ID="{DD85AAA0-F70B-40E8-A1C1-0074226C3558}">
+							<ChildrenList>
+								<Action Name="" ID="{7A00FFE8-3EF9-49F8-8D46-EF9615DD6EBF}" ShortID="452129238">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bubble POP sound" ID="{DC2B6225-60C9-4452-B0B6-0A60274C0D15}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="BubbleSpawn" ID="{08CE9201-7A3F-49F3-8341-3B07D0DCC793}">
+							<ChildrenList>
+								<Action Name="" ID="{72009CC1-5C7A-429C-A7F4-1997852DAF90}" ShortID="540786765">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bubble Spawn sound" ID="{0B94EFEA-B39C-4F05-843F-74ED917944D7}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MovementSound" ID="{47C39C4A-0F2E-461D-BF4D-750E8794D7FF}">
+							<ChildrenList>
+								<Action Name="" ID="{522C35CB-F058-4F8B-B6B3-ADF3A2F609B2}" ShortID="380439212">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MovementSound" ID="{DA601310-01E3-4911-9F28-56A4EF6BBC6D}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StopSFX" ID="{2DC07BA7-6158-4579-97F5-4BCC51EB0C5C}">
+							<ChildrenList>
+								<Action Name="" ID="{B3771D85-F703-42A3-B8EB-51587DC865B0}" ShortID="242746115">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MovementSound" ID="{DA601310-01E3-4911-9F28-56A4EF6BBC6D}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{74A3574A-8625-4A21-AC60-51F6403DAAD4}" ShortID="270209157">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DrawingSound" ID="{C226F56A-994C-4A09-88BE-6E2FEAD01CA0}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="LowEnergy" ID="{0380A087-635D-4DDC-9A5B-EEB678554494}">
+							<ChildrenList>
+								<Action Name="" ID="{CA95692D-8994-4DCF-B98E-720D8F2F6A37}" ShortID="883661753">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Low Energy Sound" ID="{5693BAB3-C0B4-4839-B6B6-57F8D958B49C}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="NodeHumStart" ID="{5FD26FCC-3D22-407B-91A4-1E41D4D74390}">
+							<ChildrenList>
+								<Action Name="" ID="{08492310-4AE3-47D0-9A9B-F7B25CB0D2FC}" ShortID="852468938">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="NodeHummer" ID="{2A98293C-830F-4F4D-94CB-8DC722A4DB61}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="RockImpact" ID="{4F941490-CE35-43D7-BE84-686E518B14DD}">
+							<ChildrenList>
+								<Action Name="" ID="{BEAEC435-071A-46E9-9242-CB99CA753607}" ShortID="485191281">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Rock Impact" ID="{3F141E95-FE06-4A0B-9269-F597F0880BD0}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MineAlert" ID="{2533020D-04E3-40FA-ACEF-3DD2E4E74A46}">
+							<ChildrenList>
+								<Action Name="" ID="{DECF0F11-E53A-46EA-BB97-72C6F33BB35B}" ShortID="42921183">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mine alerted" ID="{F20EE3A0-4DFC-4399-8122-5D6A3E5FE0B8}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="MineExplode" ID="{1570A2ED-A5BB-4BF3-8E7D-32733B2A2E83}">
+							<ChildrenList>
+								<Action Name="" ID="{0F21B4CC-83C4-4614-8C04-040C4202E745}" ShortID="469272445">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Explosion" ID="{CD03C24C-34C3-4D44-AA6F-F8A7C188AD67}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SteelImpact" ID="{C7121C47-05AD-48BE-ACD8-DA9F98B7FA15}">
+							<ChildrenList>
+								<Action Name="" ID="{7628E7EC-8FB7-49AE-8A97-5D916E01144B}" ShortID="324485077">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SteelImpact" ID="{8CE9AEC2-F4EA-485E-B742-6DBE33B5EC02}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ElectricImpact" ID="{EEFC39F5-3C02-4135-9B25-D8B822DA6304}">
+							<ChildrenList>
+								<Action Name="" ID="{422C149C-CB7A-4525-B2BC-7C85F7AF2721}" ShortID="483607270">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ElectricImpact2" ID="{DF15FD1D-FFE0-4AD3-BB02-8443E6BE1C79}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="RockMover" ID="{CB5D762A-0657-43A7-9DE1-F2C3C9D6309E}">
+							<ChildrenList>
+								<Action Name="" ID="{709D3B45-661E-478E-B4D3-F60A52442347}" ShortID="868424009">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="RockMoving" ID="{A797FCE1-C23B-4D6F-AD8F-06AE8838F0F9}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="ButtonOnHoverEvent" ID="{3C5244A7-ECD1-4724-AB7A-84C6343BA03E}">
+				</Folder>
+				<Folder Name="Music" ID="{FFB9BA72-23F4-4401-A752-2CACF20986E9}" ShortID="136495028">
 					<ChildrenList>
-						<Action Name="" ID="{D8F3226B-E060-4E3D-A4C5-F876C3CDE90D}" ShortID="582677987">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="button hover sound" ID="{D7F7F863-C595-4788-900B-861249798D30}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="MainMenuMusicEvent" ID="{0014D07C-C694-44FA-ACD7-E2CA0818C82D}">
+							<ChildrenList>
+								<Action Name="" ID="{A4E5AC02-B9F1-4D09-8EB0-52862BE235BA}" ShortID="59225876">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Morning after show 27 th may" ID="{81FB666E-0B79-439D-987E-FF5F91923A7A}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayLevelMusicEvent" ID="{13321A6B-AFF9-456B-9F12-2BA4B5D6C72D}">
+							<ChildrenList>
+								<Action Name="" ID="{7BA3BFAE-C09B-4BF2-84C5-12E946DD4104}" ShortID="498430035">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LevelMusic1" ID="{B0477F30-BBC2-46A7-AC67-422F5639CAF1}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StopLevelMusic" ID="{0D32C8E5-1651-4C31-86A6-685A051127E4}">
+							<ChildrenList>
+								<Action Name="" ID="{8F02EE81-8057-43FC-B894-BF176502F511}" ShortID="822151787">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LevelMusic1" ID="{B0477F30-BBC2-46A7-AC67-422F5639CAF1}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayGameOver" ID="{6499A99E-B1AE-4AB0-B659-336BAA8C22E0}">
+							<ChildrenList>
+								<Action Name="" ID="{8F23C8D2-2A50-4C42-B269-C16D2533A707}" ShortID="920220133">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="game over jingle" ID="{947E3235-8D0C-4902-B822-767363ACECFF}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayWin" ID="{B6FCBA81-4E1F-482D-B978-F0CEF0697C03}">
+							<ChildrenList>
+								<Action Name="" ID="{8D8FE546-47D4-44D1-BBF9-75944C371C04}" ShortID="488248617">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Win Jingle" ID="{E8E6C149-4258-42D8-A93B-483EAC39DE23}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="ButtonClickEvent" ID="{A6EEED60-2608-44FF-BA3B-29E68729C8CA}">
+				</Folder>
+				<Folder Name="States" ID="{93C67FB0-FD46-4584-98C7-FDDE04450BCF}" ShortID="639565378">
 					<ChildrenList>
-						<Action Name="" ID="{15B758B9-4687-43DC-9302-69375318532A}" ShortID="377066234">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Button Execution sound" ID="{5BA5BDD9-DCDF-4152-B76C-2D3856979F62}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="SetPlanningEvent" ID="{762C8121-7753-4F2B-AC58-27A4BD9461F3}">
+							<ChildrenList>
+								<Action Name="" ID="{A727D05E-3DCF-48E2-8F97-F7D97009D6DE}" ShortID="1014286834">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Planning" ID="{20B0E82E-CC63-4015-9309-6B53DEAC0CD5}" WorkUnitID="{FD8E3708-8862-45D9-9AE7-53DB2B3B122D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SetStressEvent" ID="{2320FE09-B29F-49E2-864B-D50E83F471A0}">
+							<ChildrenList>
+								<Action Name="" ID="{86996F2A-5784-4187-A35A-5D9654DBCDD1}" ShortID="27740623">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Stress" ID="{DAD2A232-25CB-411A-BF74-F944FA8F41FE}" WorkUnitID="{FD8E3708-8862-45D9-9AE7-53DB2B3B122D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SetDrawing" ID="{49E5076F-840E-47D7-955E-8D4F2003FC48}">
+							<ChildrenList>
+								<Action Name="" ID="{514286A3-5461-461C-94DB-453C59C3D03A}" ShortID="726561827">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmDrawing" ID="{F2770C2F-E8C6-4C13-92F2-CB3B4E6E5C44}" WorkUnitID="{FD8E3708-8862-45D9-9AE7-53DB2B3B122D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SetNotDrawing" ID="{184321C6-9A9F-45DB-B641-ACCEE127EB33}">
+							<ChildrenList>
+								<Action Name="" ID="{BE441AEB-C6AA-4A69-A340-DF03CC4A0FDB}" ShortID="560158658">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmNotDrawing" ID="{E7604A74-C617-4B69-A298-45A3E580C072}" WorkUnitID="{FD8E3708-8862-45D9-9AE7-53DB2B3B122D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SetMoving" ID="{714C87CD-015B-4A0B-87AE-FFA1E1DDAA5B}">
+							<ChildrenList>
+								<Action Name="" ID="{7453A933-B84C-4907-923B-8CA7CBFAECA0}" ShortID="297407012">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmMoving" ID="{714B6395-DE00-4D4A-AFE6-A6298B8A9A98}" WorkUnitID="{FD8E3708-8862-45D9-9AE7-53DB2B3B122D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SetNotMoving" ID="{155524CF-667B-41D5-9544-FEDDCCEB6E66}">
+							<ChildrenList>
+								<Action Name="" ID="{37CCF151-F15E-4CD0-AF5B-A5A4665C0BDF}" ShortID="158117616">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AmNotMoving" ID="{52B91C74-9D2E-449D-ACBE-7D9B19542716}" WorkUnitID="{FD8E3708-8862-45D9-9AE7-53DB2B3B122D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="MainMenuMusicEvent" ID="{0014D07C-C694-44FA-ACD7-E2CA0818C82D}">
-					<ChildrenList>
-						<Action Name="" ID="{A4E5AC02-B9F1-4D09-8EB0-52862BE235BA}" ShortID="59225876">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Morning after show 27 th may" ID="{81FB666E-0B79-439D-987E-FF5F91923A7A}" WorkUnitID="{394B2704-9D1E-4593-B799-65F275B6171E}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

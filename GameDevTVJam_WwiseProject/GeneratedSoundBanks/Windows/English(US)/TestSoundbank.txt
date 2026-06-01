@@ -1,12 +1,71 @@
 Event	ID	Name			Wwise Object Path	Notes
-	513455580	ButtonOnHoverEvent			\Default Work Unit\ButtonOnHoverEvent	
-	1097980931	TestEvent			\Default Work Unit\TestEvent	
-	1236694768	MainMenuMusicEvent			\Default Work Unit\MainMenuMusicEvent	
-	1406980521	ButtonClickEvent			\Default Work Unit\ButtonClickEvent	
+	170346575	NodeHumStart			\Default Work Unit\SFX\NodeHumStart	
+	513455580	ButtonOnHoverEvent			\Default Work Unit\SFX\ButtonOnHoverEvent	
+	528151708	RockImpact			\Default Work Unit\SFX\RockImpact	
+	794354902	DrawingSound			\Default Work Unit\SFX\DrawingSound	
+	937677513	RockMover			\Default Work Unit\SFX\RockMover	
+	1053564957	SetMoving			\Default Work Unit\States\SetMoving	
+	1236694768	MainMenuMusicEvent			\Default Work Unit\Music\MainMenuMusicEvent	
+	1307992046	StopLevelMusic			\Default Work Unit\Music\StopLevelMusic	
+	1406980521	ButtonClickEvent			\Default Work Unit\SFX\ButtonClickEvent	
+	1425176460	SetNotDrawing			\Default Work Unit\States\SetNotDrawing	
+	1448158269	EnergyCollect			\Default Work Unit\SFX\EnergyCollect	
+	1724224948	SteelImpact			\Default Work Unit\SFX\SteelImpact	
+	1772229705	LowEnergy			\Default Work Unit\SFX\LowEnergy	
+	1862074640	SetNotMoving			\Default Work Unit\States\SetNotMoving	
+	1973797163	PlayWin			\Default Work Unit\Music\PlayWin	
+	2114819398	MineAlert			\Default Work Unit\SFX\MineAlert	
+	2423205157	SetStressEvent			\Default Work Unit\States\SetStressEvent	
+	2454956916	PlayLevelMusicEvent			\Default Work Unit\Music\PlayLevelMusicEvent	
+	2813983028	SetPlanningEvent			\Default Work Unit\States\SetPlanningEvent	
+	2895517991	PlayGameOver			\Default Work Unit\Music\PlayGameOver	
+	3000457456	BubblePop			\Default Work Unit\SFX\BubblePop	
+	3009491347	MineExplode			\Default Work Unit\SFX\MineExplode	
+	3099025672	BubbleSpawn			\Default Work Unit\SFX\BubbleSpawn	
+	3189472150	StopSFX			\Default Work Unit\SFX\StopSFX	
+	3223270983	MovementSound			\Default Work Unit\SFX\MovementSound	
+	3416954922	ElectricImpact			\Default Work Unit\SFX\ElectricImpact	
+	4053722055	SetDrawing			\Default Work Unit\States\SetDrawing	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	655658861	DrawingBool			\Default Work Unit\DrawingBool	
+	881871422	MovementBool			\Default Work Unit\MovementBool	
+	2173927252	LevelMusicStates			\Default Work Unit\LevelMusicStates	
+
+State	ID	Name	State Group			Notes
+	629708439	AmDrawing	DrawingBool			
+	748895195	None	DrawingBool			
+	2354748124	AmNotDrawing	DrawingBool			
+	748895195	None	MovementBool			
+	2578698925	AmMoving	MovementBool			
+	4090208096	AmNotMoving	MovementBool			
+	748895195	None	LevelMusicStates			
+	3840192365	Stress	LevelMusicStates			
+	4030710154	Planning	LevelMusicStates			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2292736783	DeathVolume			\Default Work Unit\DeathVolume	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	93951049	Rock Sliding	.cache\65\{65827B80-51A8-1368-9110-EA11DBEB0658}.wem		\Containers\Default Work Unit\SFX\RockMoving\Rock Sliding\Rock Sliding		678664
+	284549926	Node Hovering Hum	.cache\A7\{A7A5782F-C9E0-6A51-8550-327F114FD8EB}.wem		\Containers\Default Work Unit\SFX\NodeHummer\Node Hovering Hum\Node Hovering Hum		6098544
+	295243203	SPOILER_caliss (1)	.cache\C4\{C4E74652-A690-5F6A-551E-E215097E5FE6}.wem		\Containers\Default Work Unit\Music\LevelMusic1\StressMusic\SPOILER_caliss (1)\SPOILER_caliss (1)		3649632
 	302087734	Morning after show 27 th may	.cache\3D\{3DA45CBC-0A6A-4679-DC34-C7196E2D0377}.wem		\Containers\Default Work Unit\Music\Morning after show 27 th may		7735712
-	419507423	Puzzle_Solved	.cache\BC\{BCC5F6D9-D64A-C397-D758-3E6EF5B41DCB}.wem		\Containers\Default Work Unit\Puzzle_Solved		2117728
-	644324691	Button Execution sound	.cache\D2\{D2B86301-F847-90E3-52CA-B791597E628A}.wem		\Containers\Default Work Unit\Button Execution sound		20812
-	990279914	button hover sound	.cache\74\{747939B0-18D8-CE62-2705-690FCE62CCBF}.wem		\Containers\Default Work Unit\button hover sound		384096
+	355740718	Bubble Spawn sound	.cache\28\{2893C345-5E64-1A60-B175-6AC3AE20DB3D}.wem		\Containers\Default Work Unit\SFX\Bubble Spawn sound\Bubble Spawn sound		380656
+	391262556	Low Energy Sound	.cache\CA\{CACD0AD6-6AFA-E0D5-EB45-A8F6FCB852A1}.wem		\Containers\Default Work Unit\SFX\Low Energy Sound\Low Energy Sound		389256
+	437455328	Mine alerted	.cache\DD\{DDDB20AB-F966-52A1-9B9D-F586A26C8E26}.wem		\Containers\Default Work Unit\SFX\Mine alerted\Mine alerted		389256
+	457726362	Bubble POP sound	.cache\B2\{B23014C3-E760-3E88-94BD-CD6DF06BAB2C}.wem		\Containers\Default Work Unit\SFX\Bubble POP sound\Bubble POP sound		338016
+	498258683	bubble mouvement	.cache\49\{49C72F20-4444-2A75-7D3C-9E2BA7300E56}.wem		\Containers\Default Work Unit\SFX\MovementSound\BubblePlaylist\bubble mouvement_01\bubble mouvement		3915716
+	612174407	Rock Impact	.cache\B5\{B53F922A-C846-D8A2-11C0-483AB56506AA}.wem		\Containers\Default Work Unit\SFX\Rock Impact\Rock Impact		500892
+	644324691	Button Execution sound	.cache\D2\{D2B86301-F847-90E3-52CA-B791597E628A}.wem		\Containers\Default Work Unit\SFX\Button Execution sound		20812
+	674116963	olenchic-electric-155027	.cache\52\{52E9871C-F28D-E338-FDD1-A1CB5A35156C}.wem		\Containers\Default Work Unit\SFX\ElectricImpact1\olenchic-electric-155027		253536
+	702814414	floraphonic-steel-blade-slice-2-188214	.cache\89\{89D5995F-74C9-71CF-B7D4-E6AF2E1A79F8}.wem		\Containers\Default Work Unit\SFX\SteelImpact\floraphonic-steel-blade-slice-2-188214		221280
+	707746923	universfield-epic-cinematic-explosion-454857	.cache\48\{48C93AB6-CC96-8A21-4585-A7D5F168E2E3}.wem		\Containers\Default Work Unit\SFX\Explosion\universfield-epic-cinematic-explosion-454857		525408
+	731653603	Drawing Sounds	.cache\9A\{9A9DF921-450F-E52B-87D0-5753F5C58808}.wem		\Containers\Default Work Unit\SFX\DrawingSound\Drawing playlist\Drawing Sounds_01\Drawing Sounds		5300616
+	831239119	game over jingle	.cache\52\{52866629-0837-358C-3E74-8027334D0563}.wem		\Containers\Default Work Unit\Music\GameOver\game over jingle\game over jingle		576096
+	937065928	Win Jingle	.cache\04\{04B580EE-71B8-9CFA-496E-D57F989668E3}.wem		\Containers\Default Work Unit\Music\Win\Win Jingle\Win Jingle		480096
+	939338232	Collect energy	.cache\3E\{3EC1BC58-DFF1-5D9F-BE04-403E813C22C6}.wem		\Containers\Default Work Unit\SFX\Collect energy\Collect energy		384096
+	990279914	button hover sound	.cache\74\{747939B0-18D8-CE62-2705-690FCE62CCBF}.wem		\Containers\Default Work Unit\SFX\button hover sound		384096
+	1042130684	dragon-studio-electric-discharge-386160	.cache\00\{002D3688-3348-3EC9-194C-5EBF2CCA34E7}.wem		\Containers\Default Work Unit\SFX\ElectricImpact2\dragon-studio-electric-discharge-386160		193632
+	1061067890	caliss_6 (1)	.cache\1B\{1BE0C2A9-34DD-7114-A83B-587A676C80EB}.wem		\Containers\Default Work Unit\Music\LevelMusic1\PlanningMusic\caliss_6 (1)\caliss_6 (1)		33896544
 
